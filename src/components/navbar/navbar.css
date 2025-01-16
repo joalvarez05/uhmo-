@@ -1,0 +1,34 @@
+
+a {
+  text-decoration: none;
+}
+.hover_link {
+  position: relative;
+}
+
+.hover_link::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--moradoClaro);
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.hover_link:hover::before {
+  transform: translateY(-0.25rem);
+  opacity: 1;
+}
+
+.logo-brand {
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  z-index: 5;
+  left: 50px;
+  top: -40px;
+}
