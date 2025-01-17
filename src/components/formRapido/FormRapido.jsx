@@ -8,9 +8,10 @@ function FormRapido() {
     message: "",
     telefono: "",
   });
-  const serviceId = process.env.REACT_APP_SERVICE_ID;
-  const templateId = process.env.REACT_APP_TEMPLATE_ID;
-  const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+
+  const serviceId = import.meta.env.REACT_APP_SERVICE_ID;
+  const templateId = import.meta.env.REACT_APP_TEMPLATE_ID;
+  const publicKey = import.meta.env.REACT_APP_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
