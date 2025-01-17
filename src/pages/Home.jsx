@@ -86,7 +86,7 @@ function Home() {
               <h3 className="fw-bold">Accesibilidad.</h3>
             </div>
             <div className="col-12 col-md-6 col-lg-6">
-              <p className="lead">
+              <p className="lead text-center">
                 "Realmente creemos que con una estrategia web correcta,
                 comunicación acertada y diseño creativo, tu empresa puede sacar
                 un provecho de internet MUY superior al que imaginas posible."
