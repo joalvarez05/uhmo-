@@ -32,7 +32,7 @@ const Card = () => {
         <div className="d-flex justify-content-center flex-column align-items-center">
           <h4 className="h2 fw-bold text-center">Trabajos recientes</h4>
           <h5 className="fw-medium text-center ls-lg">Conoce como trabajamos</h5>
-          <div className="underline-morado text-center"></div>
+          <div className="underline-turquesa text-center"></div>
         </div>
         <div className="container py-5">
           <div className="row d-flex justify-content-center">

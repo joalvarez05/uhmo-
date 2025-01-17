@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import banner from "@/assets/img/bannerResponsive.png";
 import Card from "@/components/cards/Card";
+import FormRapido from "../components/formRapido/FormRapido";
 function Home() {
   useEffect(() => {
     AOS.init({
@@ -18,10 +19,12 @@ function Home() {
     <>
       <section className="img-background d-flex align-items-center flex-column justify-content-center ">
         <div className="container">
-          <div className="text-white text-end ">
-            <h5 className="ls-lg">Nos diferenciamos, vos tambíen :)</h5>
-            <h2 className="title">DESARROLLO WEB PERSONALIZADO</h2>
-            <span className="moradoClaro title">
+          <div className="text-white text-end mb-5">
+            <h5 className="ls-lg ">Nos diferenciamos, vos tambíen :)</h5>
+            <h2 className="title">DESARROLLO</h2>
+            <h2 className="title">WEB</h2>
+            <h2 className="title">PREMIUM</h2>
+            <span className="turquesaOscuro title ">
               <Typewriter
                 options={{
                   autoStart: true,
@@ -33,10 +36,10 @@ function Home() {
                 onInit={(typewriter) => {
                   typewriter
                     .typeString("CALIDAD...")
-                    .pauseFor(1500)
+                    .pauseFor(1800)
                     .deleteAll()
                     .typeString("EXCELENCIA...")
-                    .pauseFor(1500)
+                    .pauseFor(2000)
                     .deleteAll()
                     .start();
                 }}
@@ -76,7 +79,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className=" bg-black py-5 text-white  container2">
+      <section className="py-5 text-white  container2">
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-12 col-md-6 col-lg-6 centro-lg ">
@@ -91,13 +94,46 @@ function Home() {
                 comunicación acertada y diseño creativo, tu empresa puede sacar
                 un provecho de internet MUY superior al que imaginas posible."
               </p>
-              <h4 className="fw-bold text-center">¡ Y queremos ayudarte a lograrlo !</h4>
+              <h4 className="fw-bold text-center">
+                ¡ Y queremos ayudarte a lograrlo !
+              </h4>
             </div>
           </div>
         </div>
       </section>
       <section>
         <Card />
+      </section>
+      <section className="py-5 text-white container2">
+        <div className="container row">
+          <div className="col-12 col-md-12 col-lg-6 d-flex flex-column align-items-center justify-content-center py-4">
+            <h2 className="text-center">Desarrollemos tu web juntos</h2>
+            <span className="turquesaOscuro title">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                  pauseFor: 1000,
+                }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString("CREATIVAS")
+                    .pauseFor(1500)
+                    .deleteAll()
+                    .typeString("MODERNAS")
+                    .pauseFor(1800)
+                    .deleteAll()
+                    .start();
+                }}
+              />
+            </span>
+          </div>
+          <div className="col-12 col-md-12 col-lg-6 py-4 d-flex justify-content-center align-items-center flex-column">
+            <FormRapido />
+          </div>
+        </div>
       </section>
     </>
   );
