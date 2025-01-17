@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 
 function FormRapido() {
@@ -9,18 +9,24 @@ function FormRapido() {
     telefono: "",
   });
 
-  const serviceId = import.meta.env.REACT_APP_SERVICE_ID;
-  const templateId = import.meta.env.REACT_APP_TEMPLATE_ID;
-  const publicKey = import.meta.env.REACT_APP_PUBLIC_KEY;
+  const serviceId = import.meta.env.VITE_REACT_APP_SERVICE_ID;
+  const templateId = import.meta.env.VITE_REACT_APP_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_REACT_APP_PUBLIC_KEY;
+  useEffect(() => {
+    if (publicKey) {
+      emailjs.init(publicKey);
+    } else {
+      console.error("La clave pública de EmailJS no está definida.");
+    }
+  }, [publicKey]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs.send(serviceId, templateId, formData, publicKey).then(
+    // Aca va configurado el sweet alert
+    emailjs.send(publicKey, serviceId, templateId, formData).then(
       (response) => {
         console.log("Correo enviado:", response.status, response.text);
         alert("Formulario enviado con éxito!");
