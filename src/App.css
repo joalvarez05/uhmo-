@@ -31,6 +31,7 @@
   font-family: sans-serif;
 }
 
+/* Img de fondo section 1 */
 .img-background {
   background-image: url("./assets/img/section1perro.jpg");
   background-position: center center;
@@ -51,6 +52,8 @@
 .bg-transparent {
   filter: contrast(0%);
 }
+
+/* Estilos de botones */
 
 .button {
   cursor: pointer;
@@ -98,6 +101,7 @@
 .centro-lg {
   text-align: end !important;
 }
+/* Estilos del background del section 3 */
 
 .container2 {
   width: 100%;
@@ -119,6 +123,13 @@
   background-size: 40px 40px;
   animation: move 1.5s linear infinite;
 }
+.underline-morado {
+  width: 70px;
+  height: 3px;
+  background-color: var(--moradoClaro);
+}
+
+/* Media queries */
 
 @media (max-width: 576px) {
   .title {
@@ -128,6 +139,13 @@
     text-align: center !important;
   }
 }
+@media (max-width: 768px) {
+  .centro-lg {
+    text-align: center !important;
+  }
+}
+/* Animaciones */
+
 @keyframes move {
   0% {
     background-position: 0 0;

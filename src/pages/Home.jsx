@@ -1,11 +1,11 @@
 import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import banner from "@/assets/img/bannerResponsive.png";
 import Typewriter from "typewriter-effect";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import banner from "@/assets/img/bannerResponsive.png";
+import Card from "@/components/cards/Card";
 function Home() {
   useEffect(() => {
     AOS.init({
@@ -45,10 +45,12 @@ function Home() {
           </div>
         </div>
         <div className="w-100 me-5 mt-4 text-end ">
-          <a className="button mt-4 text-light">Conoce Más</a>
+          <a className="button mt-4 text-light" href="#section2">
+            Conoce Más
+          </a>
         </div>
       </section>
-      <section className=" py-4 container">
+      <section className=" py-4 container" id="section2">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-md-6 col-lg-6">
             <img src={banner} alt="" className="img-fluid" />
@@ -66,7 +68,7 @@ function Home() {
               diseño personalizado para cada cliente.
             </p>
             <div className="text-center">
-              <Link to="contacto" className="button ">
+              <Link to="contacto" className="button">
                 {" "}
                 Consultános
               </Link>
@@ -74,11 +76,10 @@ function Home() {
           </div>
         </div>
       </section>
-
       <section className=" bg-black py-5 text-white  container2">
         <div className="container py-5">
-          <div className="row">
-            <div className="col-12 col-md-6 col-lg-4 centro-lg me-5">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6 col-lg-6 centro-lg ">
               <h2 className="moradoClaro">Nuestra misión</h2>
               <h3 className="fw-bold">Innovación,</h3>
               <h3 className="fw-bold">Cliente,</h3>
@@ -90,43 +91,13 @@ function Home() {
                 comunicación acertada y diseño creativo, tu empresa puede sacar
                 un provecho de internet MUY superior al que imaginas posible."
               </p>
-              <h4 className="fw-bold">Y queremos ayudarte a lograrlo.</h4>
+              <h4 className="fw-bold">¡ Y queremos ayudarte a lograrlo !</h4>
             </div>
           </div>
         </div>
       </section>
-      <section className="container p-5">
-        <div className="d-flex justify-content-center flex-column align-items-center">
-          <h4 className="fw-bold">Trabajos recientes</h4>
-          <h5 className="">Conocé como trabajamos</h5>
-          {/* <span className="border-bottom border" /> */}
-        </div>
-        <div className="row">
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {" "}
-            <img src={banner} alt="" className="img-fluid" />
-          </div>
-        </div>
+      <section>
+        <Card />
       </section>
     </>
   );
