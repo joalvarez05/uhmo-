@@ -8,7 +8,7 @@ import se3 from "@/assets/img/se3.png";
 import se4 from "@/assets/img/se4.png";
 import se5 from "@/assets/img/se5.png";
 const Card = () => {
-  const images = [se2, se4, se,se0, se3, se5];
+  const images = [se2, se4, se, se0, se3, se5];
 
   const [activeCard, setActiveCard] = useState(null);
   const [transformOrigin, setTransformOrigin] = useState("center");
@@ -28,7 +28,12 @@ const Card = () => {
 
   return (
     <>
-      <div>
+      <div className="py-5">
+        <div className="d-flex justify-content-center flex-column align-items-center">
+          <h4 className="h2 fw-bold text-center">Trabajos recientes</h4>
+          <h5 className="fw-medium text-center ls-lg">Conoce como trabajamos</h5>
+          <div className="underline-morado text-center"></div>
+        </div>
         <div className="container py-5">
           <div className="row d-flex justify-content-center">
             {images.map((image, index) => (
