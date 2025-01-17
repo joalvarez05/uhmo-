@@ -91,7 +91,7 @@ function Home() {
                 comunicación acertada y diseño creativo, tu empresa puede sacar
                 un provecho de internet MUY superior al que imaginas posible."
               </p>
-              <h4 className="fw-bold">¡ Y queremos ayudarte a lograrlo !</h4>
+              <h4 className="fw-bold text-center">¡ Y queremos ayudarte a lograrlo !</h4>
             </div>
           </div>
         </div>
