@@ -17,6 +17,7 @@
   --oro: #ffbe0b;
   --naranja: #fb5607;
   --rosa: #ff006e;
+  --verde: rgb(18, 220, 18);
 }
 .verde {
   color: var(--verde);
@@ -41,6 +42,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 90vh;
+}
+.img-background2 {
+  background-image: url("./assets/img/section1perro.jpg");
+  background-position-y: 14%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45dvh;
 }
 
 .title {
@@ -133,12 +141,20 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   width: 100%;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   position: relative;
+}
+.fst-italic {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgb(234, 75, 75) !important;
+  max-width: 350px;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
 
 .message {
@@ -161,9 +177,9 @@
 .form label .input + span {
   position: absolute;
   left: 10px;
-  top: 15px;
+  top: 25px;
   color: grey;
-  font-size: 0.9em;
+  font-size: 0.8rem;
   cursor: text;
   transition: 0.3s ease;
 }
@@ -179,11 +195,6 @@
   font-size: 0.7em;
   font-weight: 600;
 }
-
-.form label .input:valid + span {
-  color: green;
-}
-
 .input01 {
   width: 100%;
   field-sizing: content;
@@ -211,17 +222,6 @@
 .form label .input01:placeholder-shown + span {
   top: 40px;
   font-size: 0.9em;
-}
-
-.form label .input01:focus + span,
-.form label .input01:valid + span {
-  top: 50px;
-  font-size: 0.7em;
-  font-weight: 600;
-}
-
-.form label .input01:valid + span {
-  color: green;
 }
 
 .fancy {
@@ -340,6 +340,13 @@
   }
   .sm-none {
     display: none;
+  }
+  .img-background2 {
+    background-image: url("./assets/img/section1perro.jpg");
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
   }
 }
 @media (max-width: 768px) {

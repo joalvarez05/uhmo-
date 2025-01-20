@@ -56,7 +56,7 @@ function Home() {
       <section className=" py-4 container" id="section2">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-md-6 col-lg-6">
-            <img src={banner} alt="" className="img-fluid" />
+            <img src={banner} alt="" className="img-fluid" loading="lazy" />
           </div>
           <div className="col-12 col-md-6 col-lg-6 mt-3">
             <p className="h6 ls-lg text-center">

@@ -1,94 +1,135 @@
-import { React, useState, useEffect } from "react";
-import emailjs from "emailjs-com";
+import { React, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 
 function FormRapido() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    telefono: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const form = useRef();
 
   const serviceId = import.meta.env.VITE_REACT_APP_SERVICE_ID;
   const templateId = import.meta.env.VITE_REACT_APP_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_REACT_APP_PUBLIC_KEY;
-  useEffect(() => {
-    if (publicKey) {
-      emailjs.init(publicKey);
-    } else {
-      console.error("La clave pública de EmailJS no está definida.");
-    }
-  }, [publicKey]);
+  const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aca va configurado el sweet alert
-    emailjs.send(publicKey, serviceId, templateId, formData).then(
-      (response) => {
-        console.log("Correo enviado:", response.status, response.text);
-        alert("Formulario enviado con éxito!");
+  const sendEmail = () => {
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      () => {
+        reset({
+          name: "",
+          email: "",
+          telefono: "",
+          message: "",
+        });
+
+        Swal.fire({
+          title: "Formulario enviado con exito!",
+          text: "Te responderemos a la brevedad.",
+          icon: "success",
+        });
       },
-      (error) => {
-        console.error("Error al enviar el formulario:", error);
-        alert("Hubo un error al enviar el formulario.");
+      () => {
+        Swal.fire({
+          title: "Hubo un error al enviar el formulario!",
+          text: "Intentalo nuevamente.",
+          icon: "error",
+        });
       }
     );
   };
+
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
+      <form ref={form} className="form" onSubmit={handleSubmit(sendEmail)}>
         <label htmlFor="nombre">
           <input
-            required
             type="text"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
             className="input"
-            minLength={3}
-            maxLength={40}
+            {...register("name", {
+              required: true,
+              minLength: {
+                value: 3,
+                message: "Tu nombre debe contener mínimo 3 caracteres",
+              },
+              maxLength: {
+                value: 40,
+                message: "Tu nombre es demasiado largo",
+              },
+            })}
           />
           <span>Nombre completo (*)</span>
         </label>
+        {errors.name && <p className="fst-italic">{errors.name.message}</p>}
 
         <label htmlFor="email">
           <input
-            required
             type="email"
             className="input"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            {...register("email", {
+              required: true,
+              minLength: 3,
+              maxLength: 254,
+              pattern: {
+                value: regexEmail,
+                message: "Ingresa un correo valido",
+              },
+            })}
           />
           <span>Email (*)</span>
         </label>
+        {errors.email && <p className="fst-italic ">{errors.email.message}</p>}
 
         <label htmlFor="telefono">
           <input
-            required
             type="tel"
             className="input"
             name="telefono"
-            value={formData.telefono}
-            onChange={handleChange}
+            {...register("telefono", {
+              required: true,
+              pattern: {
+                value: /^[0-9]+$/,
+                message: "Solo se permiten números",
+              },
+              minLength: {
+                value: 6,
+                message: "Número demasiado corto",
+              },
+              maxLength: {
+                value: 16,
+                message: "Número demasiado largo",
+              },
+            })}
           />
-          <span>Telefono (*)</span>
+          <span>Teléfono (*)</span>
         </label>
+        {errors.telefono && (
+          <p className="fst-italic"> {errors.telefono.message}</p>
+        )}
+
         <label htmlFor="mensaje">
           <textarea
-            required
             rows="3"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Ingresa tu mensaje aqui (*)"
+            maxLength={1000}
+            placeholder="Ingresa tu mensaje aquí (*)"
             className="input01"
+            {...register("message", {
+              required: true,
+              maxLength: 1000,
+              minLength: {
+                value: 10,
+                message: "El mensaje debe contener al menos 10 caracteres",
+              },
+            })}
           ></textarea>
         </label>
-
         <button className="fancy" type="submit">
           <span className="top-key"></span>
           <span className="text">Enviar</span>

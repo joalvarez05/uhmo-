@@ -9,9 +9,14 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg">
           <div className=" container-fluid pt-2 ">
             <div className="position-relative ">
-              <a className="navbar-brand " href="#">
-                <img src={logo} alt="logo de uhmo" className="logo-brand" />
-              </a>
+              <Link className="navbar-brand " to="/">
+                <img
+                  src={logo}
+                  alt="logo de uhmo"
+                  className="logo-brand"
+                  loading="lazy"
+                />
+              </Link>
             </div>
             <button
               className="navbar-toggler"
@@ -27,26 +32,34 @@ function Navbar() {
             <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
               <div className="mx-auto ">
                 <div className="navbar-nav gap-2 fs-5 ">
-                  <a
+                  <Link
                     className="nav-link active hover_link text-light"
                     aria-current="page"
-                    href="#"
+                    to="/"
                   >
                     Inicio
-                  </a>
-                  <a className="nav-link hover_link text-light" href="#">
+                  </Link>
+                  <Link
+                    className="nav-link hover_link text-light"
+                    to="/acercaDe"
+                  >
                     Acerca de UHMO
-                  </a>
-                  <a className="nav-link hover_link text-light" href="#">
+                  </Link>
+                  <Link
+                    className="nav-link hover_link text-light"
+                    to="/portfolio"
+                  >
                     Portfolio
-                  </a>
-                  <a className="nav-link hover_link text-light" href="#">
+                  </Link>
+                  <Link
+                    className="nav-link hover_link text-light"
+                    to="/contacto"
+                  >
                     Contacto
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
-            {/* <a className="button">Subscribe</a> */}
           </div>
         </nav>
       </div>
