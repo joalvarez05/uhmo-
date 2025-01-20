@@ -19,17 +19,29 @@
   --rosa: #ff006e;
   --verde: rgb(18, 220, 18);
 }
+.naranja {
+  color: var(--naranja);
+}
+.morado {
+  color: var(--morado);
+}
 .verde {
-  color: var(--verde);
+  color: var(--verde) !important;
+}
+.oro {
+  color: var(--oro) !important;
+}
+.rosa {
+  color: var(--rosa) !important;
 }
 .turquesaOscuro {
-  color: var(--turquesaOscuro);
+  color: var(--turquesaOscuro) !important;
 }
 .turquesaClaro {
-  color: var(--turquesaClaro);
+  color: var(--turquesaClaro) !important;
 }
 .lavanda {
-  color: var(--lavanda);
+  color: var(--lavanda) !important;
 }
 .sans {
   font-family: sans-serif;
@@ -43,12 +55,15 @@
   background-size: cover;
   height: 90vh;
 }
+/* estilos pagina acerca de */
 .img-background2 {
   background-image: url("./assets/img/section1perro.jpg");
   background-position-y: 14%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 45dvh;
+  height: 40dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -329,6 +344,8 @@
   right: 0;
   width: 0;
 }
+
+/* Estilos pagina de contacto */
 /* Media queries */
 
 @media (max-width: 576px) {
@@ -349,6 +366,7 @@
     height: 25vh;
   }
 }
+
 @media (max-width: 768px) {
   .centro-lg {
     text-align: center !important;
