@@ -93,7 +93,7 @@ function Home() {
         </div>
       </section>
       <section className="py-5 text-white container2">
-        <div className="container py-5">
+        <div className="container">
           <div className="row align-items-center">
             <div
               className="col-12 col-md-6 col-lg-6 centro-lg "

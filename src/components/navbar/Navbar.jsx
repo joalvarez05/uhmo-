@@ -5,11 +5,11 @@ import logo from "@/assets/img/uhmoLogoLight.png";
 function Navbar() {
   return (
     <>
-      <div className="bg">
+      <div className="bg blanco">
         <nav className="navbar navbar-expand-lg">
-          <div className=" container-fluid pt-2 ">
-            <div className="position-relative ">
-              <Link className="navbar-brand " to="/">
+          <div className="container-fluid pt-2">
+            <div className="position-relative">
+              <Link className="navbar-brand" to="/">
                 <img
                   src={logo}
                   alt="logo de uhmo"
@@ -20,6 +20,7 @@ function Navbar() {
             </div>
             <button
               className="navbar-toggler"
+              data-bs-theme="dark"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup"
