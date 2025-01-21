@@ -5,7 +5,7 @@ import logo from "@/assets/img/uhmoLogoLight.png";
 function Navbar() {
   return (
     <>
-      <div className="bg-dark">
+      <div className="bg">
         <nav className="navbar navbar-expand-lg">
           <div className=" container-fluid pt-2 ">
             <div className="position-relative ">

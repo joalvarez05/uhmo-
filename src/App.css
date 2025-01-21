@@ -13,17 +13,25 @@
   --morado: #8338ec;
   --lavanda: #d1c4e9;
   --negro: #212121;
-  --gris-: #757575;
+  --gris: #757575;
+  --blanco: #fff;
   --oro: #ffbe0b;
   --naranja: #fb5607;
   --rosa: #ff006e;
   --verde: rgb(18, 220, 18);
+  --moradoOscuro: #1e1132;
+}
+.moradoOscuro {
+  color: var(--moradoOscuro);
+}
+.blanco {
+  color: var(--blanco) !important;
 }
 .naranja {
-  color: var(--naranja);
+  color: var(--naranja) !important;
 }
 .morado {
-  color: var(--morado);
+  color: var(--morado) !important;
 }
 .verde {
   color: var(--verde) !important;
@@ -65,7 +73,26 @@
   display: flex;
   flex-direction: column;
 }
-
+.bg-breadcrumb {
+  background-color: rgba(222, 222, 222, 0.767);
+  padding: 5px 10px;
+  color: #ecececcf;
+  border-radius: 20px;
+  color: var(--negro);
+}
+.bg {
+  background-color: #170831;
+}
+.bg-contain-ring {
+  height: 100%;
+  width: 100%;
+}
+.border-lateral {
+  border-right: 1px solid #49188d;
+}
+.centrado-sm {
+  text-align: start;
+}
 .title {
   font-size: 5rem;
   font-weight: 900;
@@ -284,7 +311,7 @@
   transition: all 0.3s ease-in-out;
   text-transform: lowercase;
   text-decoration: none;
-  color: #818181;
+  color: #579a74de;
   transform: translateX(30%);
   font-weight: 700;
 }
@@ -346,6 +373,7 @@
 }
 
 /* Estilos pagina de contacto */
+
 /* Media queries */
 
 @media (max-width: 576px) {
@@ -371,7 +399,17 @@
   .centro-lg {
     text-align: center !important;
   }
+  .centrado-sm {
+    text-align: center;
+  }
 }
+
+@media (max-width: 991.5px) {
+  .border-lateral {
+    border-right: none;
+  }
+}
+
 /* Animaciones */
 
 @keyframes move {
