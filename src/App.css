@@ -417,6 +417,9 @@
   .border-lateral {
     border-right: none;
   }
+  .container2 {
+    height: 100%;
+  }
 }
 .contenedor-visible {
   opacity: 0; /* Empieza invisible */

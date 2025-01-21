@@ -25,14 +25,17 @@ function Contacto() {
                 Realizanos una consulta o solicitá presupuesto utilizando el
                 siguiente formulario.
               </p>
+              <FormRapido></FormRapido>{" "}
+            </div>
+            <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center ">
               <div className="text-center">
-                <p className="fs-3">
-                  <i className="bi bi-envelope-at oro me-3 fs-2"></i>
+                <p className="fs-4">
                   <a
                     className="blanco link-offset-2 link-underline link-underline-opacity-0 "
                     href="mailto:uhmodesarrollos@gmail.com"
                     target="_blank"
                   >
+                    <i className="bi bi-envelope-at oro me-3 fs-3"></i>
                     uhmodesarrollos@gmail.com
                   </a>
                 </p>
@@ -61,9 +64,6 @@ function Contacto() {
                   Tucumán, Argentina.
                 </p>
               </div>
-            </div>
-            <div className="col-12 col-md-6 col-lg-6 ">
-              <FormRapido></FormRapido>{" "}
             </div>
           </div>
         </div>
