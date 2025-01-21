@@ -200,7 +200,7 @@ function AcercaDeUhmo() {
               data-aos="fade-right"
             >
               <h4 className="text-center fw-bold">Landing Pages</h4>
-              <p className="lead text-center">
+              <p className="lead text-center gris">
                 Diseñamos páginas específicas y atractivas, ideales para
                 convertir visitantes en clientes. Perfectas para campañas
                 publicitarias o promocionar un servicio o producto. Integración
@@ -214,7 +214,7 @@ function AcercaDeUhmo() {
               <h4 className="text-center fw-bold ">
                 Páginas Web Profesionales
               </h4>
-              <p className="lead text-center">
+              <p className="lead text-center gris">
                 Creamos sitios web completos y personalizados que reflejan la
                 identidad de tu negocio. Perfectos para empresas o emprendedores
                 que buscan una sólida presencia en internet.
@@ -225,18 +225,14 @@ function AcercaDeUhmo() {
               data-aos="fade-left"
             >
               <h4 className="text-center fw-bold">Responsividad</h4>
-              <p className="lead text-center">
+              <p className="lead text-center gris">
                 Diseño responsivo adaptado a todos los dispositivos.
                 Optimización para SEO y velocidad de carga.
               </p>
             </div>
-            <div
-              className="col-12 col-md-12 col-lg-3 "
-              data-aos="fade-left"
-              
-            >
+            <div className="col-12 col-md-12 col-lg-3 " data-aos="fade-left">
               <h4 className="text-center fw-bold">SEO</h4>
-              <p className="lead text-center">
+              <p className="lead text-center gris">
                 Optimización SEO para mejor visibilidad.
               </p>
             </div>

@@ -13,7 +13,7 @@
   --morado: #8338ec;
   --lavanda: #d1c4e9;
   --negro: #212121;
-  --gris: #757575;
+  --gris: #c2c2c2;
   --blanco: #fff;
   --oro: #ffbe0b;
   --naranja: #fb5607;
@@ -23,6 +23,9 @@
 }
 .moradoOscuro {
   color: var(--moradoOscuro);
+}
+.gris {
+  color: var(--gris);
 }
 .blanco {
   color: var(--blanco) !important;
