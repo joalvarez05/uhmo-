@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import banner from "@/assets/img/bannerResponsive.png";
+import banner from "@/assets/img/bannerResponsive.webp";
 import Card from "@/components/cards/Card";
 import FormRapido from "../components/formRapido/FormRapido";
 function Home() {
@@ -17,10 +17,10 @@ function Home() {
 
   return (
     <>
-      <section className="img-background d-flex align-items-center flex-column justify-content-center ">
+      <section className="img-background d-flex align-items-center flex-column justify-content-center">
         <div className="container">
           <div className="text-white text-end mb-5">
-            <h5 className="ls-lg ">Nos diferenciamos, vos tambíen :)</h5>
+            <h5 className="ls-lg sm-none">Nos diferenciamos, vos tambíen :)</h5>
             <h2 className="title">DESARROLLO</h2>
             <h2 className="title">WEB</h2>
             <h2 className="title">PREMIUM</h2>
@@ -46,11 +46,11 @@ function Home() {
               />
             </span>
           </div>
-        </div>
-        <div className="w-100 me-5 mt-4 text-end ">
-          <a className="button mt-4 text-light" href="#section2">
-            Conoce Más
-          </a>
+          <div className="text-end mb-5">
+            <a className="button text-light" href="#section2">
+              Conoce Más
+            </a>
+          </div>
         </div>
       </section>
       <section

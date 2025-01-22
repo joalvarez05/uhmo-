@@ -33,9 +33,7 @@ function FormRapido() {
           icon: "success",
         });
       },
-      (error) => {
-        console.error("Error en el envío de correo:", error);
-
+      () => {
         Swal.fire({
           title: "Hubo un error al enviar el formulario!",
           text: "Intentalo nuevamente.",

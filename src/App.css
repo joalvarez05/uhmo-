@@ -54,18 +54,19 @@
 .lavanda {
   color: var(--lavanda) !important;
 }
-.sans {
-  font-family: sans-serif;
-}
 
 /* Img de fondo section 1 */
 .img-background {
-  background-image: url("./assets/img/section1perro.jpg");
+  background-image: url("./assets/img/section1perro.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 90vh;
 }
+.sm-none {
+  padding-top: 20px;
+}
+
 /* estilos pagina acerca de */
 .img-background2 {
   background-image: url("./assets/img/section1perro.jpg");
@@ -108,9 +109,7 @@
 .bg-transparent {
   filter: contrast(0%);
 }
-
 /* Estilos de botones */
-
 .button {
   cursor: pointer;
   position: relative;
@@ -125,7 +124,6 @@
   overflow: hidden;
   text-decoration: none;
 }
-
 .button::before {
   content: "";
   position: absolute;
@@ -140,26 +138,21 @@
   background-color: var(--turquesaOscuro);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
 .button:hover::before {
   scale: 3;
 }
-
 .button:hover {
   scale: 1.1;
   box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
   color: white;
 }
-
 .button:active {
   scale: 1;
 }
 .centro-lg {
   text-align: end !important;
 }
-
 /* Estilos del background del section 3 */
-
 .container2 {
   width: 100%;
   height: 60%;
@@ -180,9 +173,7 @@
   background-size: 40px 40px;
   animation: move 1.5s linear infinite;
 }
-
 /* Estilos del formulario de contacto rapido */
-
 .form {
   display: flex;
   flex-direction: column;
@@ -201,7 +192,6 @@
   line-height: 1.6;
   word-wrap: break-word;
 }
-
 .message {
   color: rgba(88, 87, 87, 0.822);
   font-size: 14px;
@@ -210,7 +200,6 @@
 .form label {
   position: relative;
 }
-
 .form label .input {
   width: 100%;
   padding: 10px 10px 20px 10px;
@@ -228,12 +217,10 @@
   cursor: text;
   transition: 0.3s ease;
 }
-
 .form label .input:placeholder-shown + span {
   top: 15px;
   font-size: 0.9em;
 }
-
 .form label .input:focus + span,
 .form label .input:valid + span {
   top: 30px;
@@ -263,12 +250,10 @@
   cursor: text;
   transition: 0.3s ease;
 }
-
 .form label .input01:placeholder-shown + span {
   top: 40px;
   font-size: 0.9em;
 }
-
 .fancy {
   border: 2px solid rgba(0, 0, 0, 0.463);
   border-radius: 0px;
@@ -290,7 +275,6 @@
   user-select: none;
   font-size: 13px;
 }
-
 .fancy::before {
   content: " ";
   width: 1.7rem;
@@ -304,7 +288,6 @@
   transform-origin: center;
   transition: background 0.3s linear, width 0.3s linear;
 }
-
 .fancy .text {
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -318,7 +301,6 @@
   transform: translateX(30%);
   font-weight: 700;
 }
-
 .fancy .top-key {
   height: 2px;
   width: 1.5625rem;
@@ -328,7 +310,6 @@
   background: white;
   transition: width 0.5s ease-out, left 0.3s ease-out;
 }
-
 .fancy .bottom-key-1 {
   height: 2px;
   width: 1.5625rem;
@@ -338,7 +319,6 @@
   background: white;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
-
 .fancy .bottom-key-2 {
   height: 2px;
   width: 0.625rem;
@@ -348,49 +328,40 @@
   background: white;
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
-
 .fancy:hover {
   color: white;
   background: var(--rosa);
 }
-
 .fancy:hover::before {
   width: 1.5rem;
   background: white;
 }
-
 .fancy:hover .text {
   color: rgb(255, 255, 255);
   padding-left: 1.5em;
 }
-
 .fancy:hover .top-key {
   left: -2px;
   width: 0px;
 }
-
 .fancy:hover .bottom-key-1,
 .fancy:hover .bottom-key-2 {
   right: 0;
   width: 0;
 }
-
 /* Estilos pagina de contacto */
 .pd-sm {
   font-size: 1.5rem;
 }
 /* Media queries */
-
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .title {
     font-size: 2.3rem;
   }
   .centro-lg {
     text-align: center !important;
   }
-  .sm-none {
-    display: none;
-  }
+
   .img-background2 {
     background-image: url("./assets/img/section1perro.jpg");
     background-position-y: 40%;
@@ -399,7 +370,6 @@
     height: 25vh;
   }
 }
-
 @media (max-width: 768px) {
   .centro-lg {
     text-align: center !important;
@@ -411,14 +381,16 @@
     padding-top: 15px;
     font-size: 1.4rem;
   }
+  .sm-none {
+    display: none;
+  }
 }
-
 @media (max-width: 991.5px) {
   .border-lateral {
     border-right: none;
   }
   .container2 {
-    height: 100%;
+    height: 80%;
   }
 }
 .contenedor-visible {
@@ -427,7 +399,6 @@
   animation: fadeIn 0.6s ease-out 1 forwards; /* Animación */
 }
 /* Animaciones */
-
 @keyframes move {
   0% {
     background-position: 0 0;
@@ -436,7 +407,6 @@
     background-position: 40px 40px;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;

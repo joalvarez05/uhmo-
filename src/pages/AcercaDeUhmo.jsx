@@ -1,7 +1,7 @@
 import { React, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import uhmito from "@/assets/img/img-uhmo.jpg";
-import baner from "@/assets/img/baner.png";
+import uhmito from "@/assets/img/img-uhmo.webp";
+import baner from "@/assets/img/baner.webp";
 import trabajar from "@/assets/img/trabajar-icon.png";
 import brain from "@/assets/img/brain-icon.png";
 import investigar from "@/assets/img/investigar-icon.png";
@@ -87,7 +87,12 @@ function AcercaDeUhmo() {
               className="col-12 col-md-4 col-lg-4 justify-content-center align-items-center"
               data-aos="fade-left"
             >
-              <img src={baner} alt="banner uhmo" className="img-fluid" />
+              <img
+                src={baner}
+                alt="banner uhmo"
+                className="img-fluid"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -107,18 +112,18 @@ function AcercaDeUhmo() {
               </p>
               <p className="fw-bold fs-4 turquesaClaro text-center">
                 Innovación:{" "}
-                <p className="fw-light fs-5 blanco">
-                  Fomentamos la creatividad y el desarrollo de soluciones
-                  innovadoras que transforman ideas en realidades.
-                </p>
               </p>
-              <p className="fw-bold fs-4 oro text-center">
-                Cliente:{" "}
-                <p className="fw-light fs-5 blanco">
-                  Nuestros clientes son el centro de todo lo que hacemos;
-                  trabajamos para superar sus expectativas en cada experiencia
-                </p>
+              <p className="fw-light fs-5 blanco">
+                Fomentamos la creatividad y el desarrollo de soluciones
+                innovadoras que transforman ideas en realidades.
               </p>
+
+              <p className="fw-bold fs-4 oro text-center">Cliente: </p>
+              <p className="fw-light fs-5 blanco">
+                Nuestros clientes son el centro de todo lo que hacemos;
+                trabajamos para superar sus expectativas en cada experiencia
+              </p>
+
               <div className="">
                 <p className="rosa fw-bold fs-4 text-center">Accesibilidad:</p>
                 <p className="fw-light fs-5 blanco text-center">
@@ -134,7 +139,12 @@ function AcercaDeUhmo() {
               data-aos="zoom-out-up"
               data-aos-duration="1000"
             >
-              <img src={uhmito} alt="" className="img-fluid rounded-4" />
+              <img
+                src={uhmito}
+                alt="ilustración escritorio de trabajo"
+                className="img-fluid rounded-4"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -161,6 +171,7 @@ function AcercaDeUhmo() {
                   src={investigar}
                   alt="trabajo en equipo"
                   className="img-fluid"
+                  loading="lazy"
                 />
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   Investigamos el Mercado
@@ -168,7 +179,12 @@ function AcercaDeUhmo() {
               </div>
 
               <div className="col-10 col-md-4 col-lg-4 d-flex flex-column align-items-center">
-                <img src={brain} alt="cerebro ideas" className="img-fluid" />{" "}
+                <img
+                  src={brain}
+                  alt="cerebro ideas"
+                  className="img-fluid"
+                  loading="lazy"
+                />{" "}
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   {" "}
                   Diseñamos estrategias Personalizadas
@@ -176,7 +192,12 @@ function AcercaDeUhmo() {
               </div>
 
               <div className="col-10 col-md-4 col-lg-4 d-flex flex-column align-items-center">
-                <img src={trabajar} alt="cerebro ideas" className="img-fluid" />{" "}
+                <img
+                  src={trabajar}
+                  alt="cerebro ideas"
+                  className="img-fluid"
+                  loading="lazy"
+                />{" "}
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   {" "}
                   Implementamos Soluciones
