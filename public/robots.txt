@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /error404/
+Sitemap: https://uhmodesarrollos.netlify.app/sitemap.xml

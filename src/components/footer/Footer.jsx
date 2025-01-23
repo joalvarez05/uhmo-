@@ -1,6 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
+import uhmoLogo from "@/assets/img/uhmoLogoLight.png";
 import dataFiscal from "@/assets/img/datafiscal.jpg";
 function Footer() {
   return (
@@ -14,8 +15,8 @@ function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 text-center col-lg-4 py-2 d-flex flex-column justify-content-center align-items-center">
-              <h3 itemProp="name" className="lot">
-                UHMO<span className="turquesaClaro lot">Desarrollos</span>
+              <h3>
+                UHMO<span className="turquesaClaro">Desarrollos</span>
               </h3>
               <nav aria-label="Footer Navigation">
                 <p className="footer-links">
@@ -90,8 +91,8 @@ function Footer() {
         <div>
           <Link to="/">
             <img
-              src="src/assets/img/uhmoLogoLight.png"
-              alt="Logo"
+              src={uhmoLogo}
+              alt="UHMO Logo"
               itemProp="logo"
               loading="lazy"
               className="logo"
