@@ -1,14 +1,23 @@
-import React from "react";
+import { React, useEffect, useRef } from "react";
 import FormRapido from "@/components/formRapido/FormRapido";
-
+import { inicializarSplitting } from "@/utils/animationGsap.js";
 function Contacto() {
+  const textRef = useRef(null);
+  useEffect(() => {
+    inicializarSplitting({ target: textRef.current });
+  }, []);
+
   return (
     <>
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
-            <div className="mb-4 ">
-              <h2 className=" fw-bold ls-lg align-bottom turquesaOscuro">
+            <div className="mb-4 text-end">
+              <h2
+                className="fw-bold ls-lg turquesaOscuro"
+                ref={textRef}
+                data-splitting
+              >
                 Contacto
               </h2>
             </div>
@@ -27,7 +36,7 @@ function Contacto() {
               </p>
               <FormRapido></FormRapido>{" "}
             </div>
-            <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center ">
+            <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center py-3">
               <div className="text-center">
                 <p className="fs-4">
                   <a
@@ -68,7 +77,6 @@ function Contacto() {
           </div>
         </div>
       </section>
-      {/* <Footer></Footer> */}
     </>
   );
 }

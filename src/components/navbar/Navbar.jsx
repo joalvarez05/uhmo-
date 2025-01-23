@@ -44,7 +44,7 @@ function Navbar() {
                     className="nav-link hover_link text-light"
                     to="/acercaDe"
                   >
-                    Acerca de UHMO
+                    Acerca de Nosotros
                   </Link>
                   <Link
                     className="nav-link hover_link text-light"

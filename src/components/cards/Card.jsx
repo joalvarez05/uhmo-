@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./card.css";
-
+import { Link } from "react-router-dom";
 import se from "@/assets/img/se.png";
 import se0 from "@/assets/img/se0.png";
 import se2 from "@/assets/img/se2.webp";
@@ -44,6 +44,8 @@ const Card = () => {
                 className="card1 col-12 col-md-6 col-lg-4 px-3 mt-4"
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
+                data-aos="fade-up"
+                data-aos-duration="1000"
               >
                 <img
                   src={image}
@@ -59,6 +61,11 @@ const Card = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="d-flex justify-content-center text-center align-items-center py-4 frame">
+          <Link to="/portfolio">
+            <button className="custom-btn btn-15">VER MÁS TRABAJOS</button>{" "}
+          </Link>
         </div>
       </div>
     </>

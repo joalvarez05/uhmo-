@@ -6,9 +6,10 @@ import trabajar from "@/assets/img/trabajar-icon.png";
 import brain from "@/assets/img/brain-icon.png";
 import investigar from "@/assets/img/investigar-icon.png";
 import AOS from "aos";
-
+import { inicializarSplitting } from "@/utils/animationGsap.js";
 function AcercaDeUhmo() {
   const vantaRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     const VANTA = window.VANTA;
@@ -28,6 +29,7 @@ function AcercaDeUhmo() {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -35,14 +37,22 @@ function AcercaDeUhmo() {
     });
   }, []);
 
+  useEffect(() => {
+    inicializarSplitting({ target: textRef.current });
+  }, []);
+
   return (
     <>
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
-            <div className="mb-4 ">
-              <h2 className=" fw-bold ls-lg align-bottom turquesaClaro">
-                Acerca de UHMO
+            <div className="mb-4 text-end">
+              <h2
+                className="fw-bold ls-lg turquesaOscuro"
+                ref={textRef}
+                data-splitting
+              >
+                Acerca de Nosotros
               </h2>
             </div>
           </div>
@@ -61,7 +71,7 @@ function AcercaDeUhmo() {
               </Link>
             </li>
             <li className="breadcrumb-item active " aria-current="page">
-              <span className="bg-breadcrumb">Acerca de UHMO</span>
+              <span className="bg-breadcrumb">Acerca de Nosotros</span>
             </li>
           </ol>
         </nav>
@@ -260,6 +270,7 @@ function AcercaDeUhmo() {
           </div>
         </div>
       </section>
+      
     </>
   );
 }

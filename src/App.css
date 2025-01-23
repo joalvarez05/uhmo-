@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Lot";
+  src: url("Lot.woff2") format("woff2"), url("Lot.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+}
+.lot {
+  font-family: "Lot";
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,6 +17,10 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+}
+:hover {
+  scrollbar-color: color-mix(in oklch, currentColor 60%, transparent)
+    transparent;
 }
 :root {
   --turquesaOscuro: #00b4d8;
@@ -57,7 +72,7 @@
 
 /* Img de fondo section 1 */
 .img-background {
-  background-image: url("./assets/img/section1perro.webp");
+  background-image: url("./assets/img/bannerFondo.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,7 +84,7 @@
 
 /* estilos pagina acerca de */
 .img-background2 {
-  background-image: url("./assets/img/section1perro.webp");
+  background-image: url("./assets/img/bannerFondo.webp");
   background-position-y: 14%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -102,53 +117,67 @@
   font-weight: 900;
 }
 .ls-lg {
-  letter-spacing: 6px;
+  letter-spacing: 6px !important;
   font-weight: 600 !important;
-  font-style: italic;
+  font-style: italic !important;
 }
 .bg-transparent {
   filter: contrast(0%);
 }
 /* Estilos de botones */
-.button {
+.custom-btn {
+  max-width: 100%;
+  height: 43px;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: transparent;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
   position: relative;
-  padding: 10px 16px;
-  font-size: 18px;
-  color: rgb(0, 0, 0);
-  border: 2px solid var(--turquesaClaro);
-  border-radius: 34px;
-  background-color: transparent;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
   text-decoration: none;
 }
-.button::before {
-  content: "";
+.btn-15 {
+  background-color: var(--morado);
+  border: none;
+  z-index: 1;
+}
+.btn-15:after {
   position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 50px;
-  height: 15px;
-  border-radius: inherit;
-  scale: 0;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
   z-index: -1;
-
   background-color: var(--turquesaOscuro);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 18px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
-.button:hover::before {
-  scale: 3;
+.btn-15:hover {
+  color: #fff;
 }
-.button:hover {
-  scale: 1.1;
-  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
-  color: white;
+.btn-15:hover:after {
+  right: 0;
+  width: 100%;
 }
-.button:active {
-  scale: 1;
+.btn-15:active {
+  top: 2px;
 }
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
 .centro-lg {
   text-align: end !important;
 }
@@ -349,28 +378,43 @@
   right: 0;
   width: 0;
 }
+.contenedor-visible {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: fadeIn 0.6s ease-out 1 forwards;
+}
 /* Estilos pagina de contacto */
 .pd-sm {
   font-size: 1.5rem;
 }
+.splitting .char {
+  animation: slide-in 0.7s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation-delay: calc(50ms * var(1s));
+  letter-spacing: 6px !important;
+  font-weight: 600 !important;
+  font-style: italic !important;
+}
+
 /* Media queries */
+@media (max-width: 600px) {
+  #restart-button {
+    left: auto;
+    right: 10px;
+    transform: none;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 2.3rem;
   }
-  .centro-lg {
-    text-align: center !important;
-  }
-
   .img-background2 {
-    background-image: url("./assets/img/section1perro.webp");
+    background-image: url("./assets/img/bannerFondo.webp");
     background-position-y: 40%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 25vh;
   }
-}
-@media (max-width: 768px) {
   .centro-lg {
     text-align: center !important;
   }
@@ -385,6 +429,11 @@
     display: none;
   }
 }
+@media (max-width: 800px) {
+  #logo-wrapper {
+    transform: scale(0.7);
+  }
+}
 @media (max-width: 991.5px) {
   .border-lateral {
     border-right: none;
@@ -393,11 +442,7 @@
     height: 80%;
   }
 }
-.contenedor-visible {
-  opacity: 0; /* Empieza invisible */
-  transform: translateY(60px); /* Comienza ligeramente desplazado */
-  animation: fadeIn 0.6s ease-out 1 forwards; /* Animación */
-}
+
 /* Animaciones */
 @keyframes move {
   0% {
@@ -415,5 +460,16 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

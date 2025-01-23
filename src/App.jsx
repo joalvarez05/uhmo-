@@ -9,7 +9,7 @@ import Contacto from "@/pages/Contacto";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Loader from "@/components/loader/Loader";
-
+import Footer from "@/components/footer/Footer";
 function App() {
   const [cargando, setCargando] = useState(true);
   const [transicion, setTransicion] = useState(false);
@@ -38,6 +38,7 @@ function App() {
             <Route path="/error404" element={<Error404 />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
+          {mostrarNavbar && <Footer />}
         </div>
       )}
     </>
