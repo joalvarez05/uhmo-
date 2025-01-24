@@ -137,13 +137,13 @@ function AcercaDeUhmo() {
               <p className="fw-bold fs-4 turquesaClaro text-center">
                 Innovación:{" "}
               </p>
-              <p className="fw-light fs-5 blanco">
+              <p className="fw-light fs-5 blanco text-center">
                 Fomentamos la creatividad y el desarrollo de soluciones
                 innovadoras que transforman ideas en realidades.
               </p>
 
               <p className="fw-bold fs-4 oro text-center">Cliente: </p>
-              <p className="fw-light fs-5 blanco">
+              <p className="fw-light fs-5 text-center blanco">
                 Nuestros clientes son el centro de todo lo que hacemos;
                 trabajamos para superar sus expectativas en cada experiencia
               </p>
