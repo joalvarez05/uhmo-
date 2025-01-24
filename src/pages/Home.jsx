@@ -48,7 +48,7 @@ function Home() {
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
-                Nos diferenciamos, vos tambíen :)
+                Nos diferenciamos, vos también :)
               </h5>
               <h2 className="title" data-aos="fade-up" data-aos-duration="1600">
                 DESARROLLO
@@ -60,7 +60,7 @@ function Home() {
               <h2 className="title" data-aos="fade-up" data-aos-duration="2300">
                 PREMIUM
               </h2>
-              <span className="turquesaOscuro title ">
+              <span className="turquesaOscuro title">
                 <Typewriter
                   options={{
                     autoStart: true,
@@ -84,7 +84,7 @@ function Home() {
             </div>
             <div className="text-end mb-5">
               <a className="custom-btn btn-15" href="#section2">
-                Conoce Más
+                Conocé Más
               </a>
             </div>
           </div>
@@ -103,7 +103,7 @@ function Home() {
             >
               <img
                 src={banner}
-                alt="diseño web responsive"
+                alt="Diseño Web Responsive"
                 className="img-fluid"
                 loading="lazy"
               />
@@ -121,7 +121,7 @@ function Home() {
                 <span className="lot">UHMO</span>DESARROLLO WEB
               </h1>
               <p className="lead text-center">
-                En <span className="fw-bold lot"> UHMO</span> brindamos
+                En <span className="fw-bold lot"> UHMO</span>, brindamos
                 servicios de{" "}
                 <span className="fw-bold">desarrollo web de calidad</span>.
                 Desarrollamos páginas web de alto impacto apuntadas a maximizar
@@ -131,7 +131,7 @@ function Home() {
               <div className="text-center">
                 <Link to="contacto" className="custom-btn btn-15">
                   {" "}
-                  Consultános
+                  Consúltanos
                 </Link>
               </div>
             </div>
@@ -140,16 +140,19 @@ function Home() {
         <section className="py-5 text-white container2 ">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-12 col-md-6 col-lg-6 text-center py-3 ">
-                <h2
-                  className="fw-medium "
+              <div className="col-12 col-md-6 col-lg-6 py-3">
+                <h2 className="text-center monospace">
+                  Nuestra Misión: Innovación, Cliente y Accesibilidad.
+                </h2>
+                {/* <h2
+                  className="fw-medium justificado"
                   data-aos="fade-right "
                   data-aos-duration="2800"
                 >
                   Nuestra misión:
                 </h2>
                 <h3
-                  className="fw-light"
+                  className="fw-light "
                   data-aos="fade-right"
                   data-aos-duration="2200"
                 >
@@ -168,7 +171,7 @@ function Home() {
                   data-aos-duration="2600"
                 >
                   Accesibilidad.
-                </h3>
+                </h3> */}
               </div>
               <div
                 className="col-12 col-md-6 col-lg-6 py-3"
@@ -178,17 +181,19 @@ function Home() {
                 <p className="lead text-center">
                   "Realmente creemos que con una estrategia web correcta,
                   comunicación acertada y diseño creativo, tu empresa puede
-                  sacar un provecho de internet MUY superior al que imaginas
+                  sacar un provecho de internet MUY superior al que imaginás
                   posible."
                 </p>
+
                 <h4 className="fw-bold text-center">
-                  ¡ Y queremos ayudarte a lograrlo !
+                  Y queremos ayudarte a lograrlo&nbsp;!
                 </h4>
               </div>
             </div>
           </div>
         </section>
         <PreguntasFrecuentes></PreguntasFrecuentes>
+
         <section className="py-5 text-white container2">
           <div
             className="container row"

@@ -2,6 +2,7 @@ import { React, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function FormRapido() {
   const {
@@ -11,6 +12,7 @@ function FormRapido() {
     formState: { errors },
   } = useForm();
   const form = useRef();
+  const navigate = useNavigate();
 
   const serviceId = import.meta.env.VITE_REACT_APP_SERVICE_ID;
   const templateId = import.meta.env.VITE_REACT_APP_TEMPLATE_ID;
@@ -31,6 +33,8 @@ function FormRapido() {
           title: "Formulario enviado con exito!",
           text: "Te responderemos a la brevedad.",
           icon: "success",
+        }).then(() => {
+          navigate("/");
         });
       },
       () => {
@@ -50,6 +54,8 @@ function FormRapido() {
           <input
             type="text"
             name="name"
+            id="nombre"
+            autoComplete="name"
             className="input"
             {...register("name", {
               required: true,
@@ -72,6 +78,8 @@ function FormRapido() {
             type="email"
             className="input"
             name="email"
+            autoComplete="email"
+            id="email"
             {...register("email", {
               required: true,
               minLength: 3,
@@ -90,6 +98,7 @@ function FormRapido() {
           <input
             type="tel"
             className="input"
+            id="telefono"
             name="telefono"
             {...register("telefono", {
               required: true,
@@ -117,6 +126,7 @@ function FormRapido() {
           <textarea
             rows="3"
             name="message"
+            id="mensaje"
             maxLength={1000}
             placeholder="Ingresa tu mensaje aquí (*)"
             className="input01"

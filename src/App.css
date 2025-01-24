@@ -70,7 +70,9 @@
 .lavanda {
   color: var(--lavanda) !important;
 }
-
+.monospace {
+  font-family: "monospace", sans-serif;
+}
 /* Img de fondo section 1 */
 .img-background {
   background-image: url("./assets/img/bannerFondo.webp");
@@ -395,6 +397,7 @@
 .pd-sm {
   font-size: 1.5rem;
 }
+
 .splitting .char {
   animation: slide-in 0.7s cubic-bezier(0.3, 0, 0.7, 1) both;
   animation-delay: calc(50ms * var(1s));
@@ -402,13 +405,230 @@
   font-weight: 600 !important;
   font-style: italic !important;
 }
+/* Estilos pagina error404 */
+
+@keyframes fall {
+  0% {
+    transform: translateY(-150vh) scale(0.8);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+    transform: translateY(50vh) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 10px #00f8ff);
+  }
+  20% {
+    transform: translateY(-70px) scale(1.1);
+    filter: drop-shadow(0 0 20px #00ffcc);
+  }
+  40% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 5px #00f8ff);
+  }
+  60% {
+    transform: translateY(-40px) scale(1.05);
+    filter: drop-shadow(0 0 15px #ff00ff);
+  }
+  80% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 8px #00f8ff);
+  }
+  90% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotateZ(360deg);
+    filter: drop-shadow(0 0 10px #00ffcc);
+  }
+}
+
+.error_logo {
+  width: 100px;
+  height: 100px;
+}
+
+.error_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 10px;
+}
+
+.error_code {
+  width: 100%;
+  margin: 0 auto;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.error_code p {
+  font-size: 6rem;
+}
+
+.error_code p:first-of-type {
+  animation: fall 1.8s forwards, bounce 1.2s 1.8s forwards;
+  box-shadow: 0 0 15px #00f8ff, 0 0 30px #00ffcc;
+  background: linear-gradient(135deg, #00ffcc, #00f8ff);
+  transform: rotateZ(-20deg);
+}
+
+.error_code p:last-of-type {
+  animation: fall 1.8s forwards, bounce 1.2s 1.8s forwards;
+  box-shadow: 0 0 15px #00f8ff, 0 0 30px #00ffcc;
+  background: linear-gradient(135deg, #00ffcc, #00f8ff);
+  transform: rotateZ(8deg);
+}
+
+.error_code p:nth-of-type(2) {
+  color: var(--moradoOscuro);
+  animation: bounce 0.4s 1.8s linear forwards;
+  opacity: 0;
+}
+
+.error_title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding: 0 3%;
+  text-align: center;
+}
+
+.error_description {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 10%;
+  color: var(--color1);
+}
+
+.action {
+  font: inherit;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+.action:hover {
+  opacity: 0.8;
+}
+
+.error_logo {
+  width: 100px;
+  height: 100px;
+}
+.error_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 10px;
+}
+
+.error_code {
+  width: 100%;
+  margin: 0 auto;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.error_code p {
+  font-size: 6rem;
+}
+
+.error_code p:first-of-type {
+  animation: fall 1.8s forwards, bounce 1.2s 1.8s forwards;
+  box-shadow: 0 0 15px #00f8ff, 0 0 20px #00ffcc;
+  border-radius: 30%;
+  padding: 5px 8px;
+  margin: 0px 10px;
+  background: linear-gradient(135deg, #00ffcc, #00f8ff);
+  transform: rotateZ(-20deg);
+}
+
+.error_code p:last-of-type {
+  animation: fall 1.8s forwards, bounce 1.2s 1.8s forwards;
+  box-shadow: 0 0 15px #00f8ff, 0 0 20px #00ffcc;
+  border-radius: 30%;
+  padding: 5px 8px;
+  margin: 0px 10px;
+  background: linear-gradient(135deg, #00ffcc, #00f8ff);
+  transform: rotateZ(8deg);
+}
+
+.error_code p:nth-of-type(2) {
+  color: var(--blanco);
+  animation: bounce 0.4s 1.8s linear forwards;
+  opacity: 1;
+}
+
+.error_title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  padding: 0 3%;
+  text-align: center;
+}
+
+.error_description {
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 10%;
+  color: var(--blanco);
+}
+
+.action {
+  font: inherit;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #00ffcc;
+  color: var(--negro);
+}
+
+.action:hover {
+  opacity: 0.8;
+}
 
 /* Media queries */
+
 @media (max-width: 600px) {
   #restart-button {
     left: auto;
     right: 10px;
     transform: none;
+  }
+  .error_logo {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -482,5 +702,53 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* animacion error 404 */
+@keyframes fall {
+  0% {
+    transform: translateY(-150vh) scale(0.8); /* Empieza más lejos y más pequeño */
+    opacity: 0; /* Se hace visible gradualmente */
+    filter: blur(8px); /* Efecto de desenfoque inicial */
+  }
+  50% {
+    opacity: 1;
+    filter: blur(2px); /* Más nítido a medida que cae */
+    transform: translateY(50vh) scale(1.1); /* Crece ligeramente en la caída */
+  }
+  100% {
+    transform: translateY(0) scale(1); /* Vuelve a su tamaño normal */
+    filter: blur(0); /* Totalmente nítido */
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 10px #00f8ff); /* Glow inicial */
+  }
+  20% {
+    transform: translateY(-70px) scale(1.1); /* Rebote más alto con crecimiento */
+    filter: drop-shadow(0 0 20px #00ffcc); /* Cambia el color del glow */
+  }
+  40% {
+    transform: translateY(0) scale(1); /* Regresa al suelo */
+    filter: drop-shadow(0 0 5px #00f8ff); /* Glow más suave */
+  }
+  60% {
+    transform: translateY(-40px) scale(1.05); /* Rebote medio */
+    filter: drop-shadow(0 0 15px #ff00ff); /* Glow rosa */
+  }
+  80% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 8px #00f8ff); /* Glow final */
+  }
+  90% {
+    transform: translateY(-10px) scale(1.02); /* Rebote mínimo */
+  }
+  100% {
+    transform: translateY(0) scale(1) rotateZ(360deg); /* Giro completo futurista */
+    filter: drop-shadow(0 0 10px #00ffcc); /* Glow final */
   }
 }
