@@ -16,7 +16,8 @@ function Footer() {
           <div className="row">
             <div className="col-12 col-md-6 text-center col-lg-4 py-2 d-flex flex-column justify-content-center align-items-center">
               <h3>
-                UHMO<span className="turquesaClaro">Desarrollos</span>
+                <span className="lot blanco">UHMO</span>
+                <span className="turquesaClaro">Desarrollos</span>
               </h3>
               <nav aria-label="Footer Navigation">
                 <p className="footer-links">

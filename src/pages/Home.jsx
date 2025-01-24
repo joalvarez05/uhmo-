@@ -101,9 +101,12 @@ function Home() {
               <p className="h6 ls-lg text-center">
                 Especialistas en desarrollo web
               </p>
-              <h1 className="fw-bold fs-1 text-center">UHMO DESARROLLO WEB</h1>
+              <h1 className="fw-bold fs-1 text-center">
+                {" "}
+                <span className="lot">UHMO</span>DESARROLLO WEB
+              </h1>
               <p className="lead text-center">
-                En <span className="fw-bold"> UHMO</span> brindamos servicios de{" "}
+                En <span className="fw-bold lot"> UHMO</span> brindamos servicios de{" "}
                 <span className="fw-bold">desarrollo web de calidad</span>.
                 Desarrollamos páginas web de alto impacto apuntadas a maximizar
                 resultados. Somos especialistas en generar soluciones a medida y
@@ -121,30 +124,30 @@ function Home() {
         <section className="py-5 text-white container2 ">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-12 col-md-6 col-lg-6 text-center py-3">
+              <div className="col-12 col-md-6 col-lg-6 text-center py-3 ">
                 <h2
-                  className="fw-bold lot"
+                  className="fw-medium "
                   data-aos="fade-right "
                   data-aos-duration="2800"
                 >
                   Nuestra misión:
                 </h2>
                 <h3
-                  className="lot"
+                  className="fw-light"
                   data-aos="fade-right"
                   data-aos-duration="2200"
                 >
                   Innovación,
                 </h3>
                 <h3
-                  className="lot"
+                  className="fw-light"
                   data-aos="fade-right"
                   data-aos-duration="2400"
                 >
                   Cliente,
                 </h3>
                 <h3
-                  className="lot"
+                  className="fw-light"
                   data-aos="fade-right"
                   data-aos-duration="2600"
                 >

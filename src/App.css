@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Lot";
-  src: url("Lot.woff2") format("woff2"), url("Lot.woff") format("woff");
+  src: url("./assets/fonts/Lot.woff2") format("woff2"),
+    url("./assets/fonts/Lot.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-size: 1rem;
