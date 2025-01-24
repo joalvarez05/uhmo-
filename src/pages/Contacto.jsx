@@ -36,20 +36,20 @@ function Contacto() {
               </p>
               <FormRapido></FormRapido>{" "}
             </div>
-            <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center py-3">
+            <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center py-3 text-nowrap">
               <div className="text-center">
-                <p className="fs-4">
+                <p className="fs-4 ps-2">
                   <a
                     className="blanco link-offset-2 link-underline link-underline-opacity-0 "
                     href="mailto:uhmodesarrollos@gmail.com"
                     target="_blank"
                   >
-                    <i className="bi bi-envelope-at oro me-3 fs-3"></i>
+                    <i className="bi bi-envelope-at rosa me-3 fs-3"></i>
                     uhmodesarrollos@gmail.com
                   </a>
                 </p>
                 <p className="fs-3">
-                  <i className="bi bi-telephone rosa me-3 fs-2"></i>
+                  <i className="bi bi-telephone turquesaClaro me-3 fs-2"></i>
                   <a
                     href="https://wa.me/5493814186084?text=Hola,%20quisiera%20hacer%20una%20consulta"
                     className="link-offset-2 link-underline link-underline-opacity-0 blanco"
@@ -69,7 +69,7 @@ function Contacto() {
                   </a>{" "}
                 </p>
                 <p className="fs-3 blanco">
-                  <i className="bi bi-geo-alt fs-2 me-3 verde"></i>
+                  <i className="bi bi-geo-alt fs-2 me-3 oro"></i>
                   Tucumán, Argentina.
                 </p>
               </div>

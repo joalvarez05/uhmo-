@@ -23,7 +23,7 @@ function Footer() {
                   <Link to="/" className="link-1" itemProp="url">
                     Inicio
                   </Link>
-                  <Link to="/acercaDe" itemProp="url">
+                  <Link to="/nosotros" itemProp="url">
                     Acerca de Nosotros
                   </Link>
                   <Link to="/portfolio" itemProp="url">
@@ -69,11 +69,11 @@ function Footer() {
               </div>
               <div>
                 <a
-                  className="blanco link-offset-2 link-underline link-underline-opacity-0 fs-5"
+                  className="blanco link-offset-2 link-underline link-underline-opacity-0 fs-5 text-nowrap"
                   href="mailto:uhmodesarrollos@gmail.com"
                   target="_blank"
                 >
-                  <i className="bi bi-envelope-at me-2 fs-5 turquesaClaro"></i>
+                  <i className="bi bi-envelope-at me-1 fs-5 turquesaClaro"></i>
                   uhmodesarrollos@gmail.com
                 </a>
               </div>
@@ -92,7 +92,7 @@ function Footer() {
           <Link to="/">
             <img
               src={uhmoLogo}
-              alt="UHMO Logo"
+              alt="logo de uhmo desarrollos"
               itemProp="logo"
               loading="lazy"
               className="logo"

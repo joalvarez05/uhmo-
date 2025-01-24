@@ -12,7 +12,7 @@ function Navbar() {
               <Link className="navbar-brand" to="/">
                 <img
                   src={logo}
-                  alt="logo de uhmo"
+                  alt="logo de uhmo desarrollos"
                   className="logo-brand"
                   loading="lazy"
                 />
@@ -42,7 +42,7 @@ function Navbar() {
                   </Link>
                   <Link
                     className="nav-link hover_link text-light"
-                    to="/acercaDe"
+                    to="/nosotros"
                   >
                     Acerca de Nosotros
                   </Link>

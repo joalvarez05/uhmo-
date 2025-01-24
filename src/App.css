@@ -203,6 +203,12 @@
   animation: move 1.5s linear infinite;
 }
 /* Estilos del formulario de contacto rapido */
+.arrow-absolute {
+  position: absolute;
+  top: -5%;
+  right: 50%;
+  transform: rotate(15deg);
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -295,6 +301,7 @@
   margin: 0;
   outline: none;
   overflow: visible;
+  background-color: #e1e1e1;
   padding: 8px 30px;
   position: relative;
   text-align: center;
@@ -440,6 +447,9 @@
   }
   .container2 {
     height: 80%;
+  }
+  .arrow-absolute {
+    display: none;
   }
 }
 

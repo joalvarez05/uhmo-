@@ -32,7 +32,7 @@ function App() {
         <div className={`contenedor ${transicion ? "contenedor-visible" : ""}`}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/acercaDe" element={<AcercaDeUhmo />} />
+            <Route path="/nosotros" element={<AcercaDeUhmo />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/error404" element={<Error404 />} />

@@ -8,8 +8,14 @@ import se3 from "@/assets/img/se3.webp";
 import se4 from "@/assets/img/se4.webp";
 import se5 from "@/assets/img/se5.webp";
 const Card = () => {
-  const images = [se2, se4, se, se0, se3, se5];
-
+  const images = [
+    { src: se2, alt: "Diseño web ecommerce" },
+    { src: se4, alt: "desarrollo web de tienda de turismo" },
+    { src: se, alt: "Diseño web de billetera virtual" },
+    { src: se0, alt: "desarrollo web de pagina web" },
+    { src: se3, alt: "diseño web de ecommerce" },
+    { src: se5, alt: "diseño web de constructora" },
+  ];
   const [activeCard, setActiveCard] = useState(null);
   const [transformOrigin, setTransformOrigin] = useState("center");
 
@@ -48,8 +54,8 @@ const Card = () => {
                 data-aos-duration="1000"
               >
                 <img
-                  src={image}
-                  alt={`Card ${index + 1}`}
+                  src={image.src}
+                  alt={image.alt}
                   className="card1-image"
                   loading="lazy"
                   style={{
