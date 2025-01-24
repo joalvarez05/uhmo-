@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function PreguntasFrecuentes() {
   return (
     <>
-      <section>
+      <section data-aos="fade-up" data-aos-duration="1500">
         <div className="py-5 container d-flex justify-content-center flex-column align-items-center">
           <h3 className="text-center fw-bold h2 ">PREGUNTAS FRECUENTES</h3>
           <div className="underline-turquesa text-center"></div>

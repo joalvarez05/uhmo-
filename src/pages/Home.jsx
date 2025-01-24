@@ -1,9 +1,7 @@
 import React from "react";
-import AOS from "aos";
 import { Helmet } from "react-helmet";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import banner from "@/assets/img/bannerResponsive.webp";
 import PreguntasFrecuentes from "@/components/preguntasFrec/PreguntasFrecuentes.jsx";
@@ -16,12 +14,6 @@ function Home() {
     form1: "CREATIVAS",
     form2: "MODERNAS",
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1500,
-      once: true,
-    });
-  }, []);
 
   return (
     <>
@@ -141,37 +133,13 @@ function Home() {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-12 col-md-6 col-lg-6 py-3">
-                <h2 className="text-center monospace">
+                <h2
+                  className="text-center monospace"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+                >
                   Nuestra Misión: Innovación, Cliente y Accesibilidad.
                 </h2>
-                {/* <h2
-                  className="fw-medium justificado"
-                  data-aos="fade-right "
-                  data-aos-duration="2800"
-                >
-                  Nuestra misión:
-                </h2>
-                <h3
-                  className="fw-light "
-                  data-aos="fade-right"
-                  data-aos-duration="2200"
-                >
-                  Innovación,
-                </h3>
-                <h3
-                  className="fw-light"
-                  data-aos="fade-right"
-                  data-aos-duration="2400"
-                >
-                  Cliente,
-                </h3>
-                <h3
-                  className="fw-light"
-                  data-aos="fade-right"
-                  data-aos-duration="2600"
-                >
-                  Accesibilidad.
-                </h3> */}
               </div>
               <div
                 className="col-12 col-md-6 col-lg-6 py-3"

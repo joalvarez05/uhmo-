@@ -1,4 +1,5 @@
 import "./App.css";
+import AOS from "aos";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar/Navbar";
@@ -17,6 +18,12 @@ function App() {
   const location = useLocation();
   const rutasSinNavbar = ["/error404"];
   const mostrarNavbar = !rutasSinNavbar.includes(location.pathname);
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+    });
+  }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       setCargando(false);

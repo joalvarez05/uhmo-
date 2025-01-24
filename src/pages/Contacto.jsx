@@ -1,12 +1,8 @@
 import { React, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
+
 import FormRapido from "@/components/formRapido/FormRapido";
-import { inicializarSplitting } from "@/utils/animationGsap.js";
 function Contacto() {
-  const textRef = useRef(null);
-  useEffect(() => {
-    inicializarSplitting({ target: textRef.current });
-  }, []);
 
   return (
     <>
@@ -26,11 +22,12 @@ function Contacto() {
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
-            <div className="mb-4 text-end">
+            <div className="mb-4 text-end"
+                >
               <h2
                 className="fw-bold ls-lg turquesaOscuro"
-                ref={textRef}
-                data-splitting
+                 data-aos="fade-left"
+                 data-aos-duration="1600"
               >
                 Contacto
               </h2>
