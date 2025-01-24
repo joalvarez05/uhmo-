@@ -1,12 +1,13 @@
 import React from "react";
 import AOS from "aos";
+import { Helmet } from "react-helmet";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import banner from "@/assets/img/bannerResponsive.webp";
-import Card from "@/components/cards/Card";
-import FormRapido from "../components/formRapido/FormRapido";
+import PreguntasFrecuentes from "@/components/preguntasFrec/PreguntasFrecuentes.jsx";
+import FormRapido from "@/components/formRapido/FormRapido";
 
 function Home() {
   const wordWrite = {
@@ -24,6 +25,20 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>UHMO - Desarrollo Web Argentina.</title>
+        <link rel="canonical" href="https://uhmodesarrollos.com.ar" />
+
+        <meta
+          name="description"
+          content="Mejor Agencia de Desarrollo Web 2025. Creamos soluciones personalizadas para empresas y emprendedores. Ofrecemos servicios de Diseño web, Desarrollo Web, y creación de experiencias digitales únicas."
+        />
+        <meta
+          name="keywords"
+          content="Desarrollo Web, Diseño Web Precios, Desarrollo Frontend, Soluciones Digitales, UHMO Desarrollos, Páginas Web Personalizadas, Diseño Responsive, Tecnología Web, Programación Web, Portfolio Web, Diseño UX/UI, Servicios de Desarrollo Web, Agencia de Desarrollo Web en Argentina, Desarrollo Web a Medida, Páginas Web Empresariales, precio pagina web.
+"
+        />
+      </Helmet>
       <main>
         <section className="img-background d-flex align-items-center flex-column justify-content-center">
           <div className="container">
@@ -106,7 +121,8 @@ function Home() {
                 <span className="lot">UHMO</span>DESARROLLO WEB
               </h1>
               <p className="lead text-center">
-                En <span className="fw-bold lot"> UHMO</span> brindamos servicios de{" "}
+                En <span className="fw-bold lot"> UHMO</span> brindamos
+                servicios de{" "}
                 <span className="fw-bold">desarrollo web de calidad</span>.
                 Desarrollamos páginas web de alto impacto apuntadas a maximizar
                 resultados. Somos especialistas en generar soluciones a medida y
@@ -172,9 +188,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <Card />
-        </section>
+        <PreguntasFrecuentes></PreguntasFrecuentes>
         <section className="py-5 text-white container2">
           <div
             className="container row"

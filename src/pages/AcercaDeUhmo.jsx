@@ -1,6 +1,5 @@
 import { React, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
-
 import { Link } from "react-router-dom";
 import uhmito from "@/assets/img/img-uhmo.webp";
 import baner from "@/assets/img/baner.webp";
@@ -9,6 +8,7 @@ import brain from "@/assets/img/brain-icon.png";
 import investigar from "@/assets/img/investigar-icon.png";
 import AOS from "aos";
 import { inicializarSplitting } from "@/utils/animationGsap.js";
+
 function AcercaDeUhmo() {
   const vantaRef = useRef(null);
   const textRef = useRef(null);
@@ -47,25 +47,15 @@ function AcercaDeUhmo() {
     <>
       <Helmet>
         <title>UHMO - Acerca de Nosotros.</title>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://uhmodesarrollos.com.ar/nosotros" />
-
+        <link rel="canonical" href="https://uhmodesarrollos.com.ar/acercaDe" />
         <meta
           name="description"
           content="En UHMO Desarrollos somos un equipo joven, capacitados para todo tipo de proyecto y apasionados. Nos encanta el Desarrollo Web, el SEO y el Diseño Web."
         />
         <meta
           name="keywords"
-          content="contacto, servicio al cliente, consultas, Mi Empresa"
+          content="contacto, servicio al cliente, consultas,precios, Mi Empresa"
         />
-
-        <meta name="author" content="UHMO Desarrollos" />
-        <meta property="og:title" content="UHMO - Acerca de Nosotros" />
-        <meta
-          property="og:image"
-          content="https://uhmodesarrollos.netlify.app/assets/img/uhmoLogo.jpeg"
-        />
-        <meta property="og:url" content="https://uhmodesarrollos.com.ar" />
       </Helmet>
       <div className="img-background2 justify-content-end">
         <div className="container">

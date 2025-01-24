@@ -1,4 +1,5 @@
 import { React, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet";
 import FormRapido from "@/components/formRapido/FormRapido";
 import { inicializarSplitting } from "@/utils/animationGsap.js";
 function Contacto() {
@@ -9,6 +10,19 @@ function Contacto() {
 
   return (
     <>
+      <Helmet>
+        <title>UHMO - Contacto.</title>
+        <link rel="canonical" href="https://uhmodesarrollos.com.ar/contacto" />
+
+        <meta
+          name="description"
+          content="Animate a iniciarte en el mundo digital y tener tu propia página web, consultanos. Tenemos la mejor relación precio-calidad del mercado."
+        />
+        <meta
+          name="keywords"
+          content="contacto, servicio al cliente, consultas, precios, Mi Empresa"
+        />
+      </Helmet>
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
