@@ -69,8 +69,8 @@ const Card = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center text-center align-items-center py-4 frame">
-          <Link to="/portfolio">
-            <button className="custom-btn btn-15">VER MÁS TRABAJOS</button>{" "}
+          <Link to="/contacto">
+            <button className="custom-btn btn-15">CONTACTANOS</button>{" "}
           </Link>
         </div>
       </div>
