@@ -1,6 +1,5 @@
-import { React, useEffect, useRef } from "react";
+import { React } from "react";
 import { Helmet } from "react-helmet";
-
 import FormRapido from "@/components/formRapido/FormRapido";
 function Contacto() {
 
@@ -19,6 +18,7 @@ function Contacto() {
           content="contacto, servicio al cliente, consultas, precios, Mi Empresa"
         />
       </Helmet>
+      
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">

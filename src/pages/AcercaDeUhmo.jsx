@@ -7,12 +7,10 @@ import trabajar from "@/assets/img/trabajar-icon.png";
 import brain from "@/assets/img/brain-icon.png";
 import investigar from "@/assets/img/investigar-icon.png";
 import AOS from "aos";
-import { inicializarSplitting } from "@/utils/animationGsap.js";
 
 function AcercaDeUhmo() {
   const vantaRef = useRef(null);
-  const textRef = useRef(null);
-
+  
   useEffect(() => {
     const VANTA = window.VANTA;
     let vantaEffect = VANTA.RINGS({
@@ -39,10 +37,6 @@ function AcercaDeUhmo() {
     });
   }, []);
 
-  useEffect(() => {
-    inicializarSplitting({ target: textRef.current });
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -63,8 +57,8 @@ function AcercaDeUhmo() {
             <div className="mb-4 text-end">
               <h2
                 className="fw-bold ls-lg turquesaOscuro"
-                ref={textRef}
-                data-splitting
+                data-aos="fade-left"
+                data-aos-duration="1600"
               >
                 Acerca de Nosotros
               </h2>
