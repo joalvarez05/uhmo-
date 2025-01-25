@@ -1,4 +1,4 @@
-# UHMO Consultora / IN PROGRESS
+# UHMO Consultora
 
 ## Demo
 
