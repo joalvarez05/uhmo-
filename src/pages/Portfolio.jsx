@@ -14,7 +14,21 @@ function Portfolio() {
           />
         <meta name="keywords" content="trabajos, portfolio, Mi Empresa" />
       </Helmet>
-      
+      <div className="img-background2 justify-content-end">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="mb-4 text-end">
+              <h2
+                className="fw-bold ls-lg turquesaOscuro"
+                data-aos="fade-left"
+                data-aos-duration="1600"
+              >
+            Portfolio
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
     <div className="container pt-3">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
