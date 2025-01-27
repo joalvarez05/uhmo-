@@ -1,9 +1,23 @@
-import "./navbar.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
+
 function Navbar() {
   const logoUrl =
     "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
+
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.href = logoUrl;
+    link.as = "image";
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [logoUrl]);
+
   return (
     <>
       <div className="bg blanco">
@@ -30,9 +44,9 @@ function Navbar() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
-              <div className="mx-auto ">
-                <div className="navbar-nav gap-2 fs-5 ">
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="mx-auto">
+                <div className="navbar-nav gap-2 fs-5">
                   <Link
                     className="nav-link active hover_link text-light"
                     aria-current="page"
