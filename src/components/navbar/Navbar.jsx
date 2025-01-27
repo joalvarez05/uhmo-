@@ -1,8 +1,9 @@
 import "./navbar.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/img/uhmoLogoLight.webp"
 function Navbar() {
+  const logoUrl =
+    "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
   return (
     <>
       <div className="bg blanco">
@@ -11,7 +12,7 @@ function Navbar() {
             <div className="position-relative">
               <Link className="navbar-brand" to="/">
                 <img
-                  src={logo}
+                  src={logoUrl}
                   alt="logo de uhmo desarrollos"
                   className="logo-brand"
                 />

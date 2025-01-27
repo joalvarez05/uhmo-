@@ -1,9 +1,10 @@
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
-import uhmoLogo from "@/assets/img/uhmoLogoLight.webp";
 import dataFiscal from "@/assets/img/datafiscal.webp";
 function Footer() {
+  const logoUrl =
+  "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
   return (
     <>
       <footer
@@ -90,11 +91,7 @@ function Footer() {
                   src={dataFiscal}
                   alt="qr data fiscal"
                   loading="lazy"
-                  // style={{
-                  //   maxWidth: "40px",
-                  //   maxHeight: "40px",
-                  //   objectFit: "cover",
-                  // }}
+                
                 />
               </a>
             </div>
@@ -106,7 +103,7 @@ function Footer() {
         <div>
           <Link to="/">
             <img
-              src={uhmoLogo}
+              src={logoUrl}
               alt="logo de uhmo desarrollos"
               itemProp="logo"
               loading="lazy"

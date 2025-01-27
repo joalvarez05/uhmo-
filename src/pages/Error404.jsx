@@ -1,9 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import uhmoLogo from "@/assets/img/uhmoLogoLight.webp";
 import { Link } from "react-router-dom";
 
 function Error404() {
+  const logoUrl =
+  "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
   return (
     <>
       <Helmet>
@@ -17,7 +18,7 @@ function Error404() {
       <div className="bg-dark h-100 blanco">
         <div className="py-4">
           <nav className="text-center">
-            <img src={uhmoLogo} className="error_logo" alt="logo de la marca" />
+            <img src={logoUrl} className="error_logo" alt="logo de la marca" />
           </nav>
         </div>
         <main className="container">
