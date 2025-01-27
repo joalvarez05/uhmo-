@@ -11,6 +11,7 @@ import Contacto from "@/pages/Contacto";
 import "./App.css";
 import Loader from "@/components/loader/Loader";
 import Footer from "@/components/footer/Footer";
+import BtnWhatsapp from "@/components/botonWhatsapp/BtnWhatsapp";
 function App() {
   const [cargando, setCargando] = useState(true);
   const [transicion, setTransicion] = useState(false);
@@ -36,17 +37,22 @@ function App() {
       {mostrarNavbar && <Navbar />}
       {cargando && <Loader />}
       {!cargando && (
-        <div className={`contenedor ${transicion ? "contenedor-visible" : ""}`}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/nosotros" element={<AcercaDeUhmo />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/error404" element={<Error404 />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
+        <>
+          <div
+            className={`${transicion ? "contenedor-visible " : "contenedor "}`}
+          >
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/nosotros" element={<AcercaDeUhmo />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/error404" element={<Error404 />} />
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </div>
           {mostrarNavbar && <Footer />}
-        </div>
+          <BtnWhatsapp />
+        </>
       )}
     </>
   );
