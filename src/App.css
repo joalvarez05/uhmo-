@@ -43,6 +43,9 @@
 .blanco {
   color: var(--blanco) !important;
 }
+.sombra {
+  filter: drop-shadow(0 0 0.75rem rgb(81, 62, 66));
+}
 .naranja {
   color: var(--naranja) !important;
 }
@@ -75,8 +78,9 @@
 }
 /* Img de fondo section 1 */
 .img-background {
-  background-image: url("./assets/img/bannerFondo.webp");
-  background-position: center center;
+  background-image: url("./assets/img/bannerFondoGrande.webp");
+  background-position: center 65%;
+  filter: brightness(90%);
   background-repeat: no-repeat;
   background-size: cover;
   height: 90vh;
@@ -86,10 +90,11 @@
 }
 /* estilos pagina acerca de */
 .img-background2 {
-  background-image: url("./assets/img/bannerFondo.webp");
-  background-position-y: 14%;
+  background-image: url("./assets/img/bannerFondoGrande.webp");
+  background-position-y: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
   height: 40dvh;
   display: flex;
   flex-direction: column;
@@ -386,16 +391,10 @@
   right: 0;
   width: 0;
 }
-.contenedor-visible {
-  opacity: 0;
-  transform: translateY(60px);
-  animation: fadeIn 0.6s ease-out 1 forwards;
-}
 /* Estilos pagina de contacto */
 .pd-sm {
   font-size: 1.5rem;
 }
-
 /* Estilos pagina error404 */
 
 @keyframes fall {
@@ -621,6 +620,15 @@
     width: 70px;
     height: 70px;
   }
+  .img-background {
+    background-image: url("./assets/img/bannerFondoPeq.webp");
+    max-width: 600px;
+    height: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+  }
 }
 
 @media (max-width: 768px) {
@@ -628,7 +636,7 @@
     font-size: 2.3rem;
   }
   .img-background2 {
-    background-image: url("./assets/img/bannerFondo.webp");
+    background-image: url("./assets/img/bannerFondoPeq.webp");
     background-position-y: 40%;
     background-repeat: no-repeat;
     background-size: cover;

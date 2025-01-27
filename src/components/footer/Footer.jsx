@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import dataFiscal from "@/assets/img/datafiscal.webp";
 function Footer() {
   const logoUrl =
-  "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
+    "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
   return (
     <>
       <footer
@@ -87,12 +87,7 @@ function Footer() {
             </div>
             <div className="col-12 text-center col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center pt-3">
               <a href="https://www.arca.gob.ar/landing/default.asp">
-                <img
-                  src={dataFiscal}
-                  alt="qr data fiscal"
-                  loading="lazy"
-                
-                />
+                <img src={dataFiscal} alt="qr data fiscal" loading="lazy" />
               </a>
             </div>
           </div>

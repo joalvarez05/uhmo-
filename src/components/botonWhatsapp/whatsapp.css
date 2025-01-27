@@ -9,14 +9,11 @@
   right: 40px;
   background-color: #25d366;
   color: #ffff;
-  border-radius: 50%;
+  border-radius: 50px;
   text-align: center;
   font-size: 2rem;
   z-index: 9999;
 }
 .float:hover {
   cursor: pointer;
-}
-.my-float {
-  margin-top: 16px;
 }

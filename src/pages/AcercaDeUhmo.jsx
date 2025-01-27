@@ -10,7 +10,7 @@ import AOS from "aos";
 
 function AcercaDeUhmo() {
   const vantaRef = useRef(null);
-  
+
   useEffect(() => {
     const VANTA = window.VANTA;
     let vantaEffect = VANTA.RINGS({
@@ -78,7 +78,7 @@ function AcercaDeUhmo() {
                 Inicio{" "}
               </Link>
             </li>
-            <li className="breadcrumb-item active " aria-current="page">
+            <li className="breadcrumb-item active" aria-current="page">
               <span className="bg-breadcrumb">Acerca de Nosotros</span>
             </li>
           </ol>
@@ -104,6 +104,7 @@ function AcercaDeUhmo() {
             <div
               className="col-12 col-md-4 col-lg-4 justify-content-center align-items-center"
               data-aos="fade-left"
+              data-aos-duration="1000"
             >
               <img
                 src={baner}
@@ -231,12 +232,14 @@ function AcercaDeUhmo() {
             <h3
               className="text-center fw-bold ls-lg pt-3 pb-5"
               data-aos="fade-up"
+              data-aos-duration="1200"
             >
               ¿&nbsp;Que ofrecemos&nbsp;?
             </h3>
             <div
               className="col-12 col-md-12 col-lg-3 border-lateral"
               data-aos="fade-right"
+              data-aos-duration="1200"
             >
               <h4 className="text-center fw-bold">Landing Pages</h4>
               <p className="lead text-center gris">
@@ -249,6 +252,7 @@ function AcercaDeUhmo() {
             <div
               className="col-12 col-md-12 col-lg-3 border-lateral "
               data-aos="fade-right"
+              data-aos-duration="1200"
             >
               <h4 className="text-center fw-bold ">
                 Páginas Web Profesionales
@@ -262,6 +266,7 @@ function AcercaDeUhmo() {
             <div
               className="col-12 col-md-12 col-lg-3 border-lateral"
               data-aos="fade-left"
+              data-aos-duration="1200"
             >
               <h4 className="text-center fw-bold">Responsividad</h4>
               <p className="lead text-center gris">
@@ -269,7 +274,11 @@ function AcercaDeUhmo() {
                 Optimización para SEO y velocidad de carga.
               </p>
             </div>
-            <div className="col-12 col-md-12 col-lg-3 " data-aos="fade-left">
+            <div
+              className="col-12 col-md-12 col-lg-3 "
+              data-aos="fade-left"
+              data-aos-duration="1200"
+            >
               <h4 className="text-center fw-bold">SEO</h4>
               <p className="lead text-center gris">
                 Optimización SEO para mejor visibilidad.

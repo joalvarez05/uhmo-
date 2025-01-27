@@ -20,21 +20,19 @@ function Home() {
       <Helmet>
         <title>UHMO - Desarrollo Web Argentina.</title>
         <link rel="canonical" href="https://uhmodesarrollos.com.ar" />
-
         <meta
           name="description"
           content="Mejor Agencia de Desarrollo Web 2025. Creamos soluciones personalizadas para empresas y emprendedores. Ofrecemos servicios de Diseño web, Desarrollo Web, y creación de experiencias digitales únicas."
         />
         <meta
           name="keywords"
-          content="Desarrollo Web, Diseño Web Precios, Desarrollo Frontend, Soluciones Digitales, UHMO Desarrollos, Páginas Web Personalizadas, Diseño Responsive, Tecnología Web, Programación Web, Portfolio Web, Diseño UX/UI, Servicios de Desarrollo Web, Agencia de Desarrollo Web en Argentina, Desarrollo Web a Medida, Páginas Web Empresariales, precio pagina web.
-"
+          content="Desarrollo Web, Diseño Web Precios, Desarrollo Frontend, Soluciones Digitales, UHMO Desarrollos, Páginas Web Personalizadas, Diseño Responsive, Tecnología Web, Programación Web, Portfolio Web, Diseño UX/UI, Servicios de Desarrollo Web, Agencia de Desarrollo Web en Argentina, Desarrollo Web a Medida, Páginas Web Empresariales, precio pagina web."
         />
       </Helmet>
       <main>
         <section className="img-background d-flex align-items-center flex-column justify-content-center">
           <div className="container">
-            <div className="text-white text-end mb-5">
+            <div className="text-end mb-5 blanco sombra">
               <h5
                 className="ls-lg sm-none"
                 data-aos="fade-up"
@@ -173,7 +171,7 @@ function Home() {
           <div
             className="container row"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="100"
           >
             <div className="col-12 col-md-12 col-lg-6 d-flex flex-column align-items-center justify-content-center py-4 ">
               <div className="arrow-absolute">
@@ -192,7 +190,6 @@ function Home() {
                   />
                 </svg>
               </div>
-
               <h2 className="text-center fw-bold ">
                 Desarrollemos tu web juntos
               </h2>
