@@ -11,8 +11,8 @@ function BtnWhatsapp() {
 
   return (
     <div>
-      <a className="float" href={url} target="_blank" rel="noopener noreferrer">
-        <i className="bi bi-whatsapp"></i>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <i className="bi bi-whatsapp fixed"></i>
       </a>
     </div>
   );

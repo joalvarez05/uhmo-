@@ -1,19 +1,30 @@
-.float {
-  position: fixed;
+.fixed {
+  position: fixed !important;
+  bottom: 5% !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  left: 85% !important;
+  z-index: 9999;
+  background-color: #25d366;
+  color: var(--blanco);
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
   width: 60px;
   height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #25d366;
-  color: #ffff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 2rem;
-  z-index: 9999;
-}
-.float:hover {
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed {
+    width: 60px;
+    height: 60px;
+    bottom: 7%!important;
+    left: 75% !important;
+    font-size: 2rem;
+  }
 }

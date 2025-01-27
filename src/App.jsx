@@ -34,8 +34,7 @@ function App() {
           <Route path="/error404" element={<Error404 />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
-        {mostrarNavbar && <Footer />}
-        <BtnWhatsapp></BtnWhatsapp>
+        {mostrarNavbar && <Footer /> && <BtnWhatsapp />}
       </>
     </>
   );
