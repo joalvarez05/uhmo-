@@ -12,7 +12,6 @@ function Navbar() {
     link.href = logoUrl;
     link.as = "image";
     document.head.appendChild(link);
-
     return () => {
       document.head.removeChild(link);
     };
