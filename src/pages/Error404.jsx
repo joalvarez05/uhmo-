@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import uhmoLogo from "@/assets/img/uhmoLogoLight.png";
+import uhmoLogo from "@/assets/img/uhmoLogoLight.webp";
 import { Link } from "react-router-dom";
 
 function Error404() {

@@ -1,13 +1,13 @@
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router-dom";
-import uhmoLogo from "@/assets/img/uhmoLogoLight.png";
-import dataFiscal from "@/assets/img/datafiscal.jpg";
+import uhmoLogo from "@/assets/img/uhmoLogoLight.webp";
+import dataFiscal from "@/assets/img/datafiscal.webp";
 function Footer() {
   return (
     <>
       <footer
-        className="footer "
+        className="footer"
         role="contentinfo"
         itemScope
         itemType="http://schema.org/WPFooter"
@@ -37,7 +37,7 @@ function Footer() {
               </nav>
             </div>
 
-            <div className=" col-12 col-md-6 col-lg-4 text-centerpy-2 d-flex flex-column justify-content-center align-items-center">
+            <div className=" col-12 col-md-6 col-lg-4 text-centerpy-2 d-flex flex-column justify-content-center align-items-center text-nowrap">
               <p itemProp="addressRegion " className="fs-4 fw-bold">
                 Contáctenos
               </p>
@@ -47,41 +47,55 @@ function Footer() {
                 Argentina
               </p>
 
-              <div className="pb-3">
-                <a
-                  href="https://wa.me/5493814186084?text=Hola,%20quisiera%20hacer%20una%20consulta"
-                  className="link-offset-2 link-underline link-underline-opacity-0 blanco fs-5 py-3"
-                  target="_blank"
-                >
-                  {" "}
-                  <i className="bi bi-telephone turquesaClaro me-2 fs-5"></i>
-                  +54 9 3814 18-6084
-                </a>
+              <div className="pb-3 text-center">
+                <p className="fs-4 ps-2">
+                  <a
+                    href="https://wa.me/5493814186084?text=Hola,%20quisiera%20hacer%20una%20consulta"
+                    className="link-offset-2 link-underline link-underline-opacity-0 blanco"
+                    target="_blank"
+                  >
+                    <i className="bi bi-telephone turquesaClaro me-1 fs-3"></i>
+                    +5493814186084
+                  </a>
+                </p>
               </div>
               <div className="pb-3">
-                <a
-                  href="https://wa.me/5493813994145?text=Hola,%20quisiera%20hacer%20una%20consulta"
-                  className="link-offset-2 link-underline link-underline-opacity-0 blanco fs-5"
-                  target="_blank"
-                >
-                  <i className="bi bi-telephone turquesaClaro me-2 fs-5"></i>
-                  +54 9 3813 99-4145
-                </a>
+                <p className="fs-4 ps-2">
+                  <a
+                    href="https://wa.me/5493813994145?text=Hola,%20quisiera%20hacer%20una%20consulta"
+                    className="link-offset-2 link-underline link-underline-opacity-0 blanco"
+                    target="_blank"
+                  >
+                    <i className="bi bi-telephone turquesaClaro me-1 fs-3"></i>
+                    +5493813994145
+                  </a>
+                </p>
               </div>
-              <div>
-                <a
-                  className="blanco link-offset-2 link-underline link-underline-opacity-0 fs-5 text-nowrap"
-                  href="mailto:uhmodesarrollos@gmail.com"
-                  target="_blank"
-                >
-                  <i className="bi bi-envelope-at me-1 fs-5 turquesaClaro"></i>
-                  uhmodesarrollos@gmail.com
-                </a>
+              <div className="pb-3">
+                <p className="fs-4 ps-2">
+                  <a
+                    className="blanco link-offset-2 link-underline link-underline-opacity-0"
+                    href="mailto:uhmodesarrollos@gmail.com"
+                    target="_blank"
+                  >
+                    <i className="bi bi-envelope-at me-1 fs-3 turquesaClaro sm_icon-none"></i>
+                    uhmodesarrollos@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
             <div className="col-12 text-center col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center pt-3">
               <a href="https://www.arca.gob.ar/landing/default.asp">
-                <img src={dataFiscal} alt="qr data fiscal" />
+                <img
+                  src={dataFiscal}
+                  alt="qr data fiscal"
+                  loading="lazy"
+                  // style={{
+                  //   maxWidth: "40px",
+                  //   maxHeight: "40px",
+                  //   objectFit: "cover",
+                  // }}
+                />
               </a>
             </div>
           </div>

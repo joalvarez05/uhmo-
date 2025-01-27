@@ -6,9 +6,6 @@
   font-style: normal;
   font-size: 1rem;
 }
-.lot {
-  font-family: "Lot";
-}
 
 * {
   padding: 0;
@@ -73,6 +70,9 @@
 .monospace {
   font-family: "monospace", sans-serif;
 }
+.lot {
+  font-family: "Lot";
+}
 /* Img de fondo section 1 */
 .img-background {
   background-image: url("./assets/img/bannerFondo.webp");
@@ -84,7 +84,6 @@
 .sm-none {
   padding-top: 20px;
 }
-
 /* estilos pagina acerca de */
 .img-background2 {
   background-image: url("./assets/img/bannerFondo.webp");
@@ -124,9 +123,7 @@
   font-weight: 600 !important;
   font-style: italic !important;
 }
-.bg-transparent {
-  filter: contrast(0%);
-}
+
 /* Estilos de botones */
 .custom-btn {
   max-width: 100%;
@@ -203,6 +200,7 @@
     #1a1a1a
   );
   background-size: 40px 40px;
+  background-position: 0;
   animation: move 1.5s linear infinite;
 }
 /* Estilos del formulario de contacto rapido */

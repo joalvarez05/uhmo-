@@ -5,7 +5,7 @@
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
+  padding: 55px;
   color: #fff !important;
 }
 
@@ -172,5 +172,10 @@
 
   .footer .footer-center i {
     margin-left: 0;
+  }
+}
+@media (max-width: 350px) {
+  .sm_icon-none {
+    display: none;
   }
 }

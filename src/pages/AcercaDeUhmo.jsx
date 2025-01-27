@@ -176,7 +176,7 @@ function AcercaDeUhmo() {
             <div className="row justify-content-start flex-column mt-5">
               <div className="col-12 col-md-12 col-lg-12 mt-5 centrado-sm ">
                 <h2 className="fw-bold moradoOscuro h1 mt-5">
-                  ¿ Como lo hacemos ?
+                  ¿&nbsp;Como lo hacemos&nbsp;?
                 </h2>
                 <p className="moradoOscuro">
                   {" "}
@@ -232,7 +232,7 @@ function AcercaDeUhmo() {
               className="text-center fw-bold ls-lg pt-3 pb-5"
               data-aos="fade-up"
             >
-              ¿ Que ofrecemos ?
+              ¿&nbsp;Que ofrecemos&nbsp;?
             </h3>
             <div
               className="col-12 col-md-12 col-lg-3 border-lateral"

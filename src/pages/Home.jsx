@@ -96,6 +96,13 @@ function Home() {
               <img
                 src={banner}
                 alt="Diseño Web Responsive"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  maxWidth: "630px",
+                  maxHeight: "600px",
+                  objectFit: "cover",
+                }}
                 className="img-fluid"
                 loading="lazy"
               />

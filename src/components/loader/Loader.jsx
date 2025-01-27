@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./loader.css";
-import loaderLogo from "@/assets/img/uhmoLogoLight.png";
+import loaderLogo from "@/assets/img/uhmoLogoLight.webp";
 function Loader() {
   return (
     <>
