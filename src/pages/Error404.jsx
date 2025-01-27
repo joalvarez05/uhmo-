@@ -15,7 +15,7 @@ function Error404() {
         />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
-      <div className="bg-dark h-100 blanco">
+      <div className="bg-dark error_altura blanco">
         <div className="py-4">
           <nav className="text-center">
             <img src={logoUrl} className="error_logo" alt="logo de la marca" />
