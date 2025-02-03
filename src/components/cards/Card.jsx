@@ -9,12 +9,36 @@ import se4 from "@/assets/img/se4.webp";
 import se5 from "@/assets/img/se5.webp";
 const Card = () => {
   const images = [
-    { src: se2, alt: "Diseño web ecommerce" },
-    { src: se4, alt: "desarrollo web de tienda de turismo" },
-    { src: se, alt: "Diseño web de billetera virtual" },
-    { src: se0, alt: "desarrollo web de pagina web" },
-    { src: se3, alt: "diseño web de ecommerce" },
-    { src: se5, alt: "diseño web de constructora" },
+    {
+      src: se2,
+      alt: "Diseño web ecommerce",
+      title: "Esta imagen es una tienda online",
+    },
+    {
+      src: se4,
+      alt: "desarrollo web de tienda de turismo",
+      title: "Tienda que ofrece paquetes de viajes por el mundo",
+    },
+    {
+      src: se,
+      alt: "Diseño web de billetera virtual",
+      title: "Wallet online para chequear precios de criptos y viajar",
+    },
+    {
+      src: se0,
+      alt: "desarrollo web de pagina web",
+      title: "Ingresar en la wallter",
+    },
+    {
+      src: se3,
+      alt: "diseño web de ecommerce",
+      title: "Catalogo de productos tienda",
+    },
+    {
+      src: se5,
+      alt: "diseño web de constructora",
+      title: "Constructora en la ciudad de San Franciso, EEUU.",
+    },
   ];
   const [activeCard, setActiveCard] = useState(null);
   const [transformOrigin, setTransformOrigin] = useState("center");
@@ -34,7 +58,7 @@ const Card = () => {
 
   return (
     <>
-      <div className="py-5">
+      <div className="py-3">
         <div className="d-flex justify-content-center flex-column align-items-center">
           <h4 className="h2 fw-bold text-center">Trabajos recientes</h4>
           <h5 className="fw-medium text-center ls-lg">
@@ -56,6 +80,7 @@ const Card = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
+                  title={image.title}
                   className="card1-image"
                   loading="lazy"
                   style={{

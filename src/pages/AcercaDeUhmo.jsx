@@ -41,7 +41,7 @@ function AcercaDeUhmo() {
     <>
       <Helmet>
         <title>UHMO - Acerca de Nosotros.</title>
-        <link rel="canonical" href="https://uhmodesarrollos.com.ar/acercaDe" />
+        <link rel="canonical" href="https://uhmo.com.ar/nosotros" />
         <meta
           name="description"
           content="En UHMO Desarrollos somos un equipo joven, capacitados para todo tipo de proyecto y apasionados. Nos encanta el Desarrollo Web, el SEO y el Diseño Web."
@@ -111,6 +111,7 @@ function AcercaDeUhmo() {
                 alt="banner uhmo"
                 className="img-fluid"
                 loading="lazy"
+                title="realizamos web responsives"
               />
             </div>
           </div>
@@ -163,6 +164,7 @@ function AcercaDeUhmo() {
                 alt="ilustración escritorio de trabajo"
                 className="img-fluid rounded-4"
                 loading="lazy"
+                title="tablero de trabajo ilustracion"
               />
             </div>
           </div>
@@ -191,6 +193,7 @@ function AcercaDeUhmo() {
                   alt="trabajo en equipo"
                   className="img-fluid"
                   loading="lazy"
+                  title="icono"
                 />
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   Investigamos el Mercado
@@ -203,6 +206,7 @@ function AcercaDeUhmo() {
                   alt="cerebro ideas"
                   className="img-fluid"
                   loading="lazy"
+                  title="icono"
                 />{" "}
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   {" "}
@@ -216,6 +220,7 @@ function AcercaDeUhmo() {
                   alt="cerebro ideas"
                   className="img-fluid"
                   loading="lazy"
+                  title="icono"
                 />{" "}
                 <p className="text-center pt-3 fw-bold ls-lg moradoOscuro">
                   {" "}

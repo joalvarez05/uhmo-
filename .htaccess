@@ -1,0 +1,18 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/sitemap.xml$
+
+RewriteCond %{HTTP_HOST} ^www\.(uhmo\.com\.ar)$ [NC]
+RewriteRule ^(.*)$ https://uhmo.com.ar/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CDN-LOOP} !cloudflare
+RewriteCond %{REQUEST_URI} !^/.well-known/acme-challenge/
+RewriteCond %{HTTP_HOST} ^uhmo\.com\.ar$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/assets/
+RewriteCond %{REQUEST_URI} !^/index.html$
+
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot|json|mp4|webp|ogg)$
+RewriteRule ^(.*)$ /index.html [L]

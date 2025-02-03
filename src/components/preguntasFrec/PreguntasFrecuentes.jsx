@@ -120,7 +120,8 @@ function PreguntasFrecuentes() {
               <Link to="/contacto">
                 <img
                   src={bannerVertical}
-                  alt="business hagamos impactante tu web"
+                  alt="business, hagamos impactante tu web"
+                  title="Contactate con nosotros y averigua diferentes planes"
                   className="img-fluid img-banner-vertical"
                 />
               </Link>

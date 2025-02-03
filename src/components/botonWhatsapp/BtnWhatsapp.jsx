@@ -10,7 +10,7 @@ function BtnWhatsapp() {
     : `https://web.whatsapp.com/send?phone=${numeroTelefono}&text=${mensaje}`;
 
   return (
-    <div>
+    <div className="position-relative">
       <a href={url} target="_blank" rel="noopener noreferrer">
         <i className="bi bi-whatsapp fixed"></i>
       </a>

@@ -1,3 +1,4 @@
 User-agent: *
+Allow: /
 Disallow: /error404/
-Sitemap: https://uhmodesarrollos.netlify.app/sitemap.xml
+Sitemap: https://uhmo.com.ar/sitemap.xml

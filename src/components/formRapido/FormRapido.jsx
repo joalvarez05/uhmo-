@@ -1,10 +1,11 @@
-import { React, useRef } from "react";
+import { React, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
+import "./formulario.css";
 function FormRapido() {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -20,6 +21,8 @@ function FormRapido() {
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
 
   const sendEmail = () => {
+    setIsLoading(true);
+
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       () => {
         reset({
@@ -28,7 +31,7 @@ function FormRapido() {
           telefono: "",
           message: "",
         });
-
+        setIsLoading(false);
         Swal.fire({
           title: "Formulario enviado con exito!",
           text: "Te responderemos a la brevedad.",
@@ -38,6 +41,7 @@ function FormRapido() {
         });
       },
       () => {
+        setIsLoading(false);
         Swal.fire({
           title: "Hubo un error al enviar el formulario!",
           text: "Intentalo nuevamente.",
@@ -66,6 +70,10 @@ function FormRapido() {
               maxLength: {
                 value: 40,
                 message: "Tu nombre es demasiado largo",
+              },
+              pattern: {
+                value: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/u,
+                message: "Solo se permiten letras y espacios",
               },
             })}
           />
@@ -99,6 +107,7 @@ function FormRapido() {
             type="tel"
             className="input"
             id="telefono"
+            autoComplete="telefono"
             name="telefono"
             {...register("telefono", {
               required: true,
@@ -127,7 +136,7 @@ function FormRapido() {
             rows="3"
             name="message"
             id="mensaje"
-            maxLength={1000}
+            autoComplete="message"
             placeholder="Ingresa tu mensaje aquí (*)"
             className="input01"
             {...register("message", {
@@ -139,6 +148,9 @@ function FormRapido() {
               },
             })}
           ></textarea>
+          {errors.message && (
+            <p className="fst-italic"> {errors.message.message}</p>
+          )}
         </label>
         <button className="fancy" type="submit">
           <span className="top-key"></span>
@@ -147,6 +159,12 @@ function FormRapido() {
           <span className="bottom-key-2"></span>
         </button>
       </form>
+      {isLoading && (
+        <>
+          <span className="py-2 fs-3 fw-bold turquesaOscuro">Enviando</span>{" "}
+          <span className="loader py-1"></span>
+        </>
+      )}
     </>
   );
 }

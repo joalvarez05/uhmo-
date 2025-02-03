@@ -19,7 +19,7 @@ function Home() {
     <>
       <Helmet>
         <title>UHMO - Desarrollo Web Argentina.</title>
-        <link rel="canonical" href="https://uhmodesarrollos.com.ar" />
+        <link rel="canonical" href="https://uhmo.com.ar" />
         <meta
           name="description"
           content="Mejor Agencia de Desarrollo Web 2025. Creamos soluciones personalizadas para empresas y emprendedores. Ofrecemos servicios de Diseño web, Desarrollo Web, y creación de experiencias digitales únicas."
@@ -32,7 +32,7 @@ function Home() {
       <main>
         <section className="img-background d-flex align-items-center flex-column justify-content-center">
           <div className="container">
-            <div className="text-end mb-5 blanco sombra">
+            <div className="text-end my-5 blanco sombra">
               <h5
                 className="ls-lg sm-none"
                 data-aos="fade-up"
@@ -94,6 +94,7 @@ function Home() {
               <img
                 src={banner}
                 alt="Diseño Web Responsive"
+                title="Banner que representa diseño responsive"
                 style={{
                   width: "100%",
                   height: "100%",

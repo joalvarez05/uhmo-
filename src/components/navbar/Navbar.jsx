@@ -28,6 +28,7 @@ function Navbar() {
                   src={logoUrl}
                   alt="logo de uhmo desarrollos"
                   className="logo-brand"
+                  title="UHMO"
                 />
               </Link>
             </div>

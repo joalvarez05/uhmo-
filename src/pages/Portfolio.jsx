@@ -5,14 +5,17 @@ import Card from "@/components/cards/Card.jsx";
 function Portfolio() {
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>UHMO - Portfolio de Trabajos ✨.</title>
-        <link rel="canonical" href="https://uhmodesarrollos.com.ar/contacto" />
+        <link rel="canonical" href="https://uhmo.com.ar/portfolio" />
         <meta
           name="description"
           content="Conocé algunos trabajos de desarrollo web realizados por nuestra empresa."
-          />
-        <meta name="keywords" content="trabajos, portfolio, Mi Empresa" />
+        />
+        <meta
+          name="keywords"
+          content="trabajos, portfolio,portafolio, Mi Empresa"
+        />
       </Helmet>
       <div className="img-background2 justify-content-end">
         <div className="container">
@@ -23,13 +26,13 @@ function Portfolio() {
                 data-aos="fade-left"
                 data-aos-duration="1600"
               >
-            Portfolio
+                Portfolio
               </h2>
             </div>
           </div>
         </div>
       </div>
-    <div className="container pt-3">
+      <div className="container pt-3">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
@@ -48,7 +51,7 @@ function Portfolio() {
         </nav>
         <hr />
       </div>
-          <Card></Card>
+      <Card></Card>
     </>
   );
 }

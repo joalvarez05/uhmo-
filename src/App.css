@@ -336,12 +336,11 @@
   line-height: 1.33333em;
   padding-left: 2em;
   display: block;
-  text-align: left;
+  text-align: center;
   transition: all 0.3s ease-in-out;
   text-transform: lowercase;
   text-decoration: none;
   color: #579a74de;
-  transform: translateX(30%);
   font-weight: 700;
 }
 .fancy .top-key {

@@ -2,12 +2,11 @@ import { React } from "react";
 import { Helmet } from "react-helmet";
 import FormRapido from "@/components/formRapido/FormRapido";
 function Contacto() {
-
   return (
     <>
       <Helmet>
         <title>UHMO - Contacto.</title>
-        <link rel="canonical" href="https://uhmodesarrollos.com.ar/contacto" />
+        <link rel="canonical" href="https://uhmo.com.ar/contacto" />
 
         <meta
           name="description"
@@ -18,16 +17,15 @@ function Contacto() {
           content="contacto, servicio al cliente, consultas, precios, Mi Empresa"
         />
       </Helmet>
-      
+
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
-            <div className="mb-4 text-end"
-                >
+            <div className="mb-4 text-end">
               <h2
                 className="fw-bold ls-lg turquesaOscuro"
-                 data-aos="fade-left"
-                 data-aos-duration="1600"
+                data-aos="fade-left"
+                data-aos-duration="1600"
               >
                 Contacto
               </h2>
@@ -52,11 +50,11 @@ function Contacto() {
                 <p className="fs-4 ps-2">
                   <a
                     className="blanco link-offset-2 link-underline link-underline-opacity-0 "
-                    href="mailto:uhmodesarrollos@gmail.com"
+                    href="mailto:Soporte.web@uhmo.com.ar"
                     target="_blank"
                   >
                     <i className="bi bi-envelope-at rosa me-3 fs-3"></i>
-                    uhmodesarrollos@gmail.com
+                    Soporte.web@uhmo.com.ar
                   </a>
                 </p>
                 <p className="fs-3">
@@ -68,16 +66,6 @@ function Contacto() {
                   >
                     +54 9 3814 18-6084
                   </a>
-                </p>
-                <p className="fs-3">
-                  <i className="bi bi-telephone me-3 turquesaClaro fs-2"></i>
-                  <a
-                    href="https://wa.me/5493813994145?text=Hola,%20quisiera%20hacer%20una%20consulta"
-                    className="link-offset-2 link-underline link-underline-opacity-0 blanco"
-                    target="_blank"
-                  >
-                    +54 9 3813 99-4145
-                  </a>{" "}
                 </p>
                 <p className="fs-3 blanco">
                   <i className="bi bi-geo-alt fs-2 me-3 oro"></i>

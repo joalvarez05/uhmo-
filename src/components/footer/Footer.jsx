@@ -39,16 +39,18 @@ function Footer() {
             </div>
 
             <div className=" col-12 col-md-6 col-lg-4 text-centerpy-2 d-flex flex-column justify-content-center align-items-center text-nowrap">
-              <p itemProp="addressRegion " className="fs-4 fw-bold">
+              <p itemProp="addressRegion" className="fs-4 fw-bold">
                 Contáctenos
               </p>
               <div className="underline-turquesa mb-4"></div>
+              <div className="d-flex">
+                <p itemProp="postalCode" className="fs-5">
+                  <i className="bi bi-geo-alt turquesaClaro fs-3 me-1"></i>
+                  Argentina
+                </p>
+              </div>
 
-              <p itemProp="postalCode" className="fs-5">
-                Argentina
-              </p>
-
-              <div className="pb-3 text-center">
+              <div className="pb-1 text-center">
                 <p className="fs-4 ps-2">
                   <a
                     href="https://wa.me/5493814186084?text=Hola,%20quisiera%20hacer%20una%20consulta"
@@ -60,34 +62,27 @@ function Footer() {
                   </a>
                 </p>
               </div>
-              <div className="pb-3">
-                <p className="fs-4 ps-2">
-                  <a
-                    href="https://wa.me/5493813994145?text=Hola,%20quisiera%20hacer%20una%20consulta"
-                    className="link-offset-2 link-underline link-underline-opacity-0 blanco"
-                    target="_blank"
-                  >
-                    <i className="bi bi-telephone turquesaClaro me-1 fs-3"></i>
-                    +5493813994145
-                  </a>
-                </p>
-              </div>
-              <div className="pb-3">
+              <div>
                 <p className="fs-4 ps-2">
                   <a
                     className="blanco link-offset-2 link-underline link-underline-opacity-0"
-                    href="mailto:uhmodesarrollos@gmail.com"
+                    href="mailto:Soporte.web@uhmo.com.ar"
                     target="_blank"
                   >
                     <i className="bi bi-envelope-at me-1 fs-3 turquesaClaro sm_icon-none"></i>
-                    uhmodesarrollos@gmail.com
+                    Soporte.web@uhmo.com.ar
                   </a>
                 </p>
               </div>
             </div>
             <div className="col-12 text-center col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center pt-3">
               <a href="https://www.arca.gob.ar/landing/default.asp">
-                <img src={dataFiscal} alt="qr data fiscal" loading="lazy" />
+                <img
+                  src={dataFiscal}
+                  alt="qr data fiscal"
+                  title="arca"
+                  loading="lazy"
+                />
               </a>
             </div>
           </div>
