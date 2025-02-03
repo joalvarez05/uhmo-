@@ -1,22 +1,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://uhmo.com.ar/</loc>
-    <lastmod>2025-01-30T15:15:32+00:00</lastmod>
+    <lastmod>2025-02-02T12:52:32+00:00</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://uhmo.com.ar/contacto</loc>
-    <lastmod>2025-01-30T15:15:32+00:00</lastmod>
+    <lastmod>2025-02-02T12:52:32+00:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uhmo.com.ar/nosotros</loc>
-    <lastmod>2025-01-30T15:15:32+00:00</lastmod>
+    <lastmod>2025-02-02T12:52:32+00:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uhmo.com.ar/portfolio</loc>
-    <lastmod>2025-01-30T15:15:32+00:00</lastmod>
+    <lastmod>2025-02-02T12:52:32+00:00</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

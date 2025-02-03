@@ -82,13 +82,13 @@ function Home() {
         <section
           className=" py-4 container"
           id="section2"
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-duration="1000"
         >
           <div className="row justify-content-center align-items-center">
             <div
               className="col-12 col-md-6 col-lg-6"
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-duration="1000"
             >
               <img
@@ -108,7 +108,7 @@ function Home() {
             </div>
             <div
               className="col-12 col-md-6 col-lg-6 mt-3"
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-duration="2000"
             >
               <p className="h6 ls-lg text-center">
@@ -141,7 +141,7 @@ function Home() {
               <div className="col-12 col-md-6 col-lg-6 py-3">
                 <h2
                   className="text-center monospace"
-                  data-aos="fade-right"
+                  data-aos="fade-up"
                   data-aos-duration="1500"
                 >
                   Nuestra Misión: Innovación, Cliente y Accesibilidad.
@@ -149,7 +149,7 @@ function Home() {
               </div>
               <div
                 className="col-12 col-md-6 col-lg-6 py-3"
-                data-aos="fade-left"
+                data-aos="fade-up"
                 data-aos-duration="1500"
               >
                 <p className="lead text-center">
