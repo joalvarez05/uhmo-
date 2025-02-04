@@ -1,5 +1,7 @@
 import { React, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
+
 function Precios() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
