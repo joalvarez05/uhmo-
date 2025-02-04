@@ -61,6 +61,12 @@ function Navbar() {
                     Acerca de Nosotros
                   </Link>
                   <Link
+                    to="/precios"
+                    className="nav-link hover_link text-light"
+                  >
+                    Precios
+                  </Link>
+                  <Link
                     className="nav-link hover_link text-light"
                     to="/portfolio"
                   >

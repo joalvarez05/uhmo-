@@ -1,4 +1,3 @@
-import "./App.css";
 import AOS from "aos";
 import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -11,6 +10,7 @@ import Contacto from "@/pages/Contacto";
 import BtnWhatsapp from "@/components/botonWhatsapp/BtnWhatsapp";
 import "./App.css";
 import Footer from "@/components/footer/Footer";
+import Precios from "@/pages/Precios";
 function App() {
   const location = useLocation();
   const rutasSinNavbar = ["/error404", "*"];
@@ -33,6 +33,7 @@ function App() {
           <Route path="/nosotros" element={<AcercaDeUhmo />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/precios" element={<Precios />} />
           <Route path="/error404" element={<Error404 />} />
           <Route path="*" element={<Navigate to="/error404" replace />} />
         </Routes>

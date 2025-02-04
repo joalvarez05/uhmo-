@@ -85,7 +85,7 @@ function AcercaDeUhmo() {
         </nav>
         <hr />
       </div>
-      <section className="banner">
+      <section>
         <div className="container">
           <div className="row justify-content-center align-items-center">
             <div className="col-12 col-md-8 col-lg-8 ">

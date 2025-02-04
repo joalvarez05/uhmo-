@@ -1,4 +1,4 @@
-import { React, useRef, useState } from "react";
+import { React, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
@@ -12,7 +12,6 @@ function FormRapido() {
     reset,
     formState: { errors },
   } = useForm();
-  const form = useRef();
   const navigate = useNavigate();
 
   const serviceId = import.meta.env.VITE_REACT_APP_SERVICE_ID;
@@ -20,40 +19,30 @@ function FormRapido() {
   const publicKey = import.meta.env.VITE_REACT_APP_PUBLIC_KEY;
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
 
-  const sendEmail = () => {
+  const sendEmail = async (data) => {
     setIsLoading(true);
-
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-      () => {
-        reset({
-          name: "",
-          email: "",
-          telefono: "",
-          message: "",
-        });
-        setIsLoading(false);
-        Swal.fire({
-          title: "Formulario enviado con exito!",
-          text: "Te responderemos a la brevedad.",
-          icon: "success",
-        }).then(() => {
-          navigate("/");
-        });
-      },
-      () => {
-        setIsLoading(false);
-        Swal.fire({
-          title: "Hubo un error al enviar el formulario!",
-          text: "Intentalo nuevamente.",
-          icon: "error",
-        });
-      }
-    );
+    try {
+      await emailjs.send(serviceId, templateId, data, publicKey);
+      reset();
+      Swal.fire({
+        title: "Formulario enviado con éxito!",
+        text: "Te responderemos a la brevedad.",
+        icon: "success",
+      }).then(() => navigate("/"));
+    } catch {
+      Swal.fire({
+        title: "Hubo un error!",
+        text: "Inténtalo nuevamente.",
+        icon: "error",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <>
-      <form ref={form} className="form" onSubmit={handleSubmit(sendEmail)}>
+      <form className="form" onSubmit={handleSubmit(sendEmail)}>
         <label htmlFor="nombre">
           <input
             type="text"
@@ -62,7 +51,7 @@ function FormRapido() {
             autoComplete="name"
             className="input"
             {...register("name", {
-              required: true,
+              required: "El nombre es obligatorio",
               minLength: {
                 value: 3,
                 message: "Tu nombre debe contener mínimo 3 caracteres",
@@ -110,9 +99,9 @@ function FormRapido() {
             autoComplete="telefono"
             name="telefono"
             {...register("telefono", {
-              required: true,
+              required: "El Teléfono es obligatorio",
               pattern: {
-                value: /^[0-9]+$/,
+                value: /^(?=.*[1-9])\d{6,16}$/,
                 message: "Solo se permiten números",
               },
               minLength: {
@@ -152,7 +141,7 @@ function FormRapido() {
             <p className="fst-italic"> {errors.message.message}</p>
           )}
         </label>
-        <button className="fancy" type="submit">
+        <button className="fancy" type="submit" disabled={isLoading}>
           <span className="top-key"></span>
           <span className="text">Enviar</span>
           <span className="bottom-key-1"></span>

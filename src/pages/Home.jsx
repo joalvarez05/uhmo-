@@ -167,7 +167,6 @@ function Home() {
           </div>
         </section>
         <PreguntasFrecuentes></PreguntasFrecuentes>
-
         <section className="py-5 text-white container2">
           <div
             className="container row"

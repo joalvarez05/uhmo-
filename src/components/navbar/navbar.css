@@ -1,7 +1,14 @@
 a {
   text-decoration: none;
 }
-
+.navbar-toggler:hover {
+  text-decoration: none;
+  color: #ffffffbc;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  color: #ffffffbc;
+}
 .hover_link {
   position: relative;
 }

@@ -9,6 +9,16 @@
   box-sizing: border-box;
   animation: animloader 2s linear infinite;
 }
+button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+button:disabled:hover {
+  pointer-events: none;
+  background-color: inherit;
+  color: inherit;
+  opacity: 0.5;
+}
 
 @keyframes animloader {
   0% {
