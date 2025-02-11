@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Lot";
   src: url("./assets/fonts/Lot.woff2") format("woff2"),
@@ -30,7 +29,7 @@
   --naranja: #fb5607;
   --rosa: #ff006e;
   --verde: rgb(18, 220, 18);
-  --moradoOscuro: #1e1132;
+  --moradoOscuro: #170830;
 }
 
 .moradoOscuro {
@@ -106,7 +105,7 @@
   color: var(--negro);
 }
 .bg {
-  background-color: #170831;
+  background-color: #170830;
 }
 .bg-contain-ring {
   height: 100%;
@@ -576,7 +575,11 @@
   max-height: 400px;
 }
 /* Media queries */
-
+@media (max-width: 350px) {
+  .sm-hidden {
+    display: none;
+  }
+}
 @media (max-width: 600px) {
   #restart-button {
     left: auto;

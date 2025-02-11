@@ -88,7 +88,11 @@ function AcercaDeUhmo() {
       <section>
         <div className="container">
           <div className="row justify-content-center align-items-center">
-            <div className="col-12 col-md-8 col-lg-8 ">
+            <div
+              className="col-12 col-md-8 col-lg-8"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <h3 className="text-center">Soluciónes integrales</h3>
               <p className="lead text-center">
                 Somos un equipo multidisciplinario compuesto por programadores,

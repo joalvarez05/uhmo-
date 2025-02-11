@@ -53,7 +53,7 @@ function Contacto() {
                     href="mailto:Soporte.web@uhmo.com.ar"
                     target="_blank"
                   >
-                    <i className="bi bi-envelope-at rosa me-3 fs-3"></i>
+                    <i className="bi bi-envelope-at sm-hidden rosa me-2 fs-3"></i>
                     Soporte.web@uhmo.com.ar
                   </a>
                 </p>

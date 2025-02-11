@@ -1,6 +1,5 @@
 import { React, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import Typewriter from "typewriter-effect";
 
 function Precios() {
   const [isMobile, setIsMobile] = useState(false);
@@ -76,7 +75,7 @@ function Precios() {
         </nav>
         <hr />
       </div>
-      <section className="py-5">
+      <section className="py-5" data-aos="fade-up" data-aos-duration="1600">
         <div className="container py-2">
           <h2 className="text-center fw-bold pb-2">
             Algunas de nuestras alternativas
@@ -210,10 +209,10 @@ function Precios() {
           </div>
           <div className=" mt-5">
             <p className="fw-bold f-6 text-center">
-              ** Si ninguna de estas opciones es lo que buscas,{" "}
+              ** ¿Necesitas una solución personalizada para tu empresa?{" "}
               <Link to="/contacto" className="rosa text-decoration-none">
                 {" "}
-                contáctanos{" "}
+                Contáctanos{" "}
               </Link>
               y lo hacemos posible. **
             </p>
