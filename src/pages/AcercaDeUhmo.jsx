@@ -2,7 +2,7 @@ import { React, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import uhmito from "@/assets/img/img-uhmo.webp";
-import baner from "@/assets/img/baner.webp";
+import baner from "@/assets/img/banerResponsive.webp";
 import trabajar from "@/assets/img/trabajar-icon.png";
 import brain from "@/assets/img/brain-icon.png";
 import investigar from "@/assets/img/investigar-icon.png";

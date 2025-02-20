@@ -8,7 +8,7 @@ import PreguntasFrecuentes from "@/components/preguntasFrec/PreguntasFrecuentes.
 import FormRapido from "@/components/formRapido/FormRapido";
 
 function Home() {
-  const wordWrite = {
+  const palabrasClaves = {
     titulo1: "CALIDAD",
     titulo2: "EXCELENCIA",
     form1: "CREATIVAS",
@@ -33,24 +33,26 @@ function Home() {
         <section className="img-background d-flex align-items-center flex-column justify-content-center">
           <div className="container">
             <div className="text-end my-5 blanco sombra">
-              <h5
+              <span
                 className="ls-lg sm-none"
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
                 Nos diferenciamos, vos también :)
-              </h5>
-              <h2 className="title" data-aos="fade-up" data-aos-duration="1600">
-                DESARROLLO
-              </h2>
-              <h2 className="title" data-aos="fade-up" data-aos-duration="2100">
-                WEB
-              </h2>
-
-              <h2 className="title" data-aos="fade-up" data-aos-duration="2300">
-                PREMIUM
-              </h2>
-              <span className="turquesaOscuro title">
+              </span>
+              <h1
+                className="title d-block"
+                data-aos="fade-up"
+                data-aos-duration="1600"
+              >
+                DESARROLLO <br />
+                WEB <br />
+                MODERNO
+              </h1>
+              <h2
+                className="turquesaOscuro title"
+                aria-label="Desarrollo Web Moderno y Optimizado"
+              >
                 <Typewriter
                   options={{
                     autoStart: true,
@@ -61,16 +63,16 @@ function Home() {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString(wordWrite.titulo1)
+                      .typeString(palabrasClaves.titulo1)
                       .pauseFor(1800)
                       .deleteAll()
-                      .typeString(wordWrite.titulo2)
+                      .typeString(palabrasClaves.titulo2)
                       .pauseFor(2000)
                       .deleteAll()
                       .start();
                   }}
                 />
-              </span>
+              </h2>
             </div>
             <div className="text-end mb-5">
               <a className="custom-btn btn-15" href="#section2">
@@ -114,10 +116,10 @@ function Home() {
               <p className="h6 ls-lg text-center">
                 Especialistas en desarrollo web
               </p>
-              <h1 className="fw-bold fs-1 text-center">
+              <h2 className="fw-bold fs-1 text-center">
                 {" "}
                 <span className="lot">UHMO</span>DESARROLLO WEB
-              </h1>
+              </h2>
               <p className="lead text-center">
                 En <span className="fw-bold lot"> UHMO</span>, brindamos
                 servicios de{" "}
@@ -204,10 +206,10 @@ function Home() {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString(wordWrite.form1)
+                      .typeString(palabrasClaves.form1)
                       .pauseFor(1500)
                       .deleteAll()
-                      .typeString(wordWrite.form2)
+                      .typeString(palabrasClaves.form2)
                       .pauseFor(1800)
                       .deleteAll()
                       .start();

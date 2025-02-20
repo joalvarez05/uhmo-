@@ -79,7 +79,7 @@ function Footer() {
               <a href="https://www.arca.gob.ar/landing/default.asp">
                 <img
                   src={dataFiscal}
-                  alt="qr data fiscal"
+                  alt="arca qr data fiscal"
                   title="arca"
                   loading="lazy"
                 />

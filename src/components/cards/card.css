@@ -6,7 +6,7 @@
   height: 280px;
   overflow: hidden;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease;
+  transition-duration: 0.3s ease;
 }
 
 .card1:hover {

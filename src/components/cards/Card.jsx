@@ -1,41 +1,46 @@
 import React, { useState } from "react";
 import "./card.css";
 import { Link } from "react-router-dom";
-import se from "@/assets/img/se.png";
-import se0 from "@/assets/img/se0.png";
-import se2 from "@/assets/img/se2.webp";
-import se3 from "@/assets/img/se3.webp";
-import se4 from "@/assets/img/se4.webp";
-import se5 from "@/assets/img/se5.webp";
+import bancaDiseñoResponsive from "@/assets/img/bancaDiseñoResponsive.webp";
+import desarrolloMobile from "@/assets/img/desarrolloMobile.webp";
+import diseñoWeb from "@/assets/img/diseñoWeb.webp";
+import ecommerceWeb from "@/assets/img/ecommerceWeb.webp";
+import paginaDeTurismo from "@/assets/img/paginaDeTurismo.webp";
+import paginaWebParaArquitectos from "@/assets/img/paginaWebParaArquitectos.webp";
 const Card = () => {
   const images = [
     {
-      src: se2,
+      src: diseñoWeb,
+      alt: "hacer pagina web",
+      title: "acequiones página web",
+    },
+    {
+      src: diseñoWeb,
       alt: "Diseño web ecommerce",
       title: "Esta imagen es una tienda online",
     },
     {
-      src: se4,
+      src: paginaDeTurismo,
       alt: "desarrollo web de tienda de turismo",
       title: "Tienda que ofrece paquetes de viajes por el mundo",
     },
     {
-      src: se,
+      src: bancaDiseñoResponsive,
       alt: "Diseño web de billetera virtual",
       title: "Wallet online para chequear precios de criptos y viajar",
     },
     {
-      src: se0,
+      src: desarrolloMobile,
       alt: "desarrollo web de pagina web",
-      title: "Ingresar en la wallter",
+      title: "Ingresar en la wallet",
     },
     {
-      src: se3,
+      src: ecommerceWeb,
       alt: "diseño web de ecommerce",
       title: "Catalogo de productos tienda",
     },
     {
-      src: se5,
+      src: paginaWebParaArquitectos,
       alt: "diseño web de constructora",
       title: "Constructora en la ciudad de San Franciso, EEUU.",
     },
@@ -67,11 +72,11 @@ const Card = () => {
           <div className="underline-turquesa text-center"></div>
         </div>
         <div className="container py-5">
-          <div className="row d-flex justify-content-center">
+          <div className="row d-flex justify-content-center ">
             {images.map((image, index) => (
               <div
                 key={index}
-                className="card1 col-12 col-md-6 col-lg-4 px-3 mt-4"
+                className="card1 col-12 col-md-6 col-lg-4 p-3 pb-3 mt-4 shadow"
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
                 data-aos="fade-up"
