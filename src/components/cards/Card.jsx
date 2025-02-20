@@ -7,11 +7,12 @@ import diseñoWeb from "@/assets/img/diseñoWeb.webp";
 import ecommerceWeb from "@/assets/img/ecommerceWeb.webp";
 import paginaDeTurismo from "@/assets/img/paginaDeTurismo.webp";
 import paginaWebParaArquitectos from "@/assets/img/paginaWebParaArquitectos.webp";
+import acequionesDesarrolloWeb from "@/assets/img/acequionesDesarrolloWeb.webp";
 const Card = () => {
   const images = [
     {
-      src: diseñoWeb,
-      alt: "hacer pagina web",
+      src: acequionesDesarrolloWeb,
+      alt: "precio pagina web",
       title: "acequiones página web",
     },
     {
@@ -76,7 +77,7 @@ const Card = () => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className="card1 col-12 col-md-6 col-lg-4 p-3 pb-3 mt-4 shadow"
+                className="card1 col-12 col-md-6 col-lg-4 p-3 pb-3 mt-4 "
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
                 data-aos="fade-up"
