@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
@@ -6,27 +6,79 @@ import { Link } from "react-router-dom";
 import banner from "@/assets/img/bannerResponsive.webp";
 import PreguntasFrecuentes from "@/components/preguntasFrec/PreguntasFrecuentes.jsx";
 import FormRapido from "@/components/formRapido/FormRapido";
+import { LanguageContext } from "@/hooks/LanguageContext";
+import { useContext } from "react";
 
 function Home() {
-  const palabrasClaves = {
-    titulo1: "CALIDAD",
-    titulo2: "EXCELENCIA",
-    form1: "CREATIVAS",
-    form2: "MODERNAS",
+  const { language } = useContext(LanguageContext);
+  const [key, setKey] = useState(Date.now());
+
+  useEffect(() => {
+    setKey(Date.now());
+  }, [language]);
+  const textos = {
+    es: {
+      titulo1: "CALIDAD",
+      titulo2: "EXCELENCIA",
+      form1: "CREATIVAS",
+      form2: "MODERNAS",
+      slogan: "Nos diferenciamos, vos también :)",
+      desarrolloWeb: "DESARROLLO WEB MODERNO",
+      btnConoceMas: "Conocé Más",
+      especialistas: "Especialistas en desarrollo web",
+      subtitulo: "UHMO DESARROLLO WEB",
+      descripcion:
+        "En UHMO, brindamos servicios de desarrollo web de calidad. Desarrollamos páginas web de alto impacto apuntadas a maximizar resultados. Somos especialistas en generar soluciones a medida y diseño personalizado para cada cliente.",
+      btnConsulta: "Consúltanos",
+      mision: "Nuestra Misión: Innovación, Cliente y Accesibilidad.",
+      vision:
+        '"Realmente creemos que con una estrategia web correcta, comunicación acertada y diseño creativo, tu empresa puede sacar un provecho de internet MUY superior al que imaginás posible."',
+      ayuda: "Y queremos ayudarte a lograrlo!",
+      formRapido: "Desarrollemos tu web juntos",
+      formRapidoChange: "CREATIVAS",
+      formRapidoChange2: "MODERNAS",
+    },
+    en: {
+      titulo1: "QUALITY",
+      titulo2: "EXCELLENCE",
+      form1: "CREATIVE",
+      form2: "MODERN",
+      slogan: "We stand out, you too :)",
+      desarrolloWeb: "MODERN WEB DEVELOPMENT",
+      btnConoceMas: "Learn More",
+      especialistas: "Web development specialists",
+      subtitulo: "UHMO WEB DEVELOPMENT",
+      descripcion:
+        "At UHMO, we provide high-quality web development services. We create high-impact websites aimed at maximizing results. We specialize in creating tailor-made solutions and custom designs for each client.",
+      btnConsulta: "Contact Us",
+      mision: "Our Mission: Innovation, Customer & Accessibility.",
+      vision:
+        '"We truly believe that with the right web strategy, proper communication, and creative design, your company can take much more advantage of the internet than you ever imagined."',
+      ayuda: "And we want to help you achieve it!",
+      formRapido: "Let's develop your website together",
+      formRapidoChange: "CREATIVE",
+      formRapidoChange2: "MODERN",
+    },
   };
 
+  const texto = textos[language];
   return (
     <>
       <Helmet>
-        <title>UHMO - Desarrollo Web Argentina.</title>
+        <title>
+          UHMO -{" "}
+          {language === "es"
+            ? "Desarrollo Web Argentina."
+            : "Web Development Argentina."}
+        </title>
         <link rel="canonical" href="https://uhmo.com.ar" />
         <meta
           name="description"
-          content="Mejor Agencia de Desarrollo Web 2025. Creamos soluciones personalizadas para empresas y emprendedores. Ofrecemos servicios de Diseño web, Desarrollo Web, y creación de experiencias digitales únicas."
-        />
-        <meta
-          name="keywords"
-          content="Desarrollo Web, Diseño Web Precios, Desarrollo Frontend, Soluciones Digitales, UHMO Desarrollos, Páginas Web Personalizadas, Diseño Responsive, Tecnología Web, Programación Web, Portfolio Web, Diseño UX/UI, Servicios de Desarrollo Web, Agencia de Desarrollo Web en Argentina, Desarrollo Web a Medida, Páginas Web Empresariales, precio pagina web."
+          content={
+            language === "es"
+              ? "Mejor Agencia de Desarrollo Web 2025. Creamos soluciones personalizadas para empresas y emprendedores. Ofrecemos servicios de Diseño web, Desarrollo Web, y creación de experiencias digitales únicas."
+              : "Best Web Development Agency 2025. We create tailored solutions for businesses and entrepreneurs. We offer web design, web development, and unique digital experiences."
+          }
         />
       </Helmet>
       <main>
@@ -38,22 +90,21 @@ function Home() {
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
-                Nos diferenciamos, vos también :)
+                {texto.slogan}
               </span>
               <h1
                 className="title d-block"
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
-                DESARROLLO <br />
-                WEB <br />
-                MODERNO
+                {texto.desarrolloWeb}
               </h1>
               <h2
                 className="turquesaOscuro title"
-                aria-label="Desarrollo Web Moderno y Optimizado"
+                aria-label={texto.desarrolloWeb}
               >
                 <Typewriter
+                  key={key}
                   options={{
                     autoStart: true,
                     loop: true,
@@ -63,10 +114,10 @@ function Home() {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString(palabrasClaves.titulo1)
+                      .typeString(texto.titulo1)
                       .pauseFor(1800)
                       .deleteAll()
-                      .typeString(palabrasClaves.titulo2)
+                      .typeString(texto.titulo2)
                       .pauseFor(2000)
                       .deleteAll()
                       .start();
@@ -76,13 +127,14 @@ function Home() {
             </div>
             <div className="text-end mb-5">
               <a className="custom-btn btn-15" href="#section2">
-                Conocé Más
+                {texto.btnConoceMas}
               </a>
             </div>
           </div>
         </section>
+
         <section
-          className=" py-4 container"
+          className="py-4 container"
           id="section2"
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -97,13 +149,6 @@ function Home() {
                 src={banner}
                 alt="Diseño Web Responsive"
                 title="Banner que representa diseño responsive"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  maxWidth: "630px",
-                  maxHeight: "600px",
-                  objectFit: "cover",
-                }}
                 className="img-fluid"
                 loading="lazy"
               />
@@ -113,31 +158,21 @@ function Home() {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
-              <p className="h6 ls-lg text-center">
-                Especialistas en desarrollo web
-              </p>
+              <p className="h6 ls-lg text-center">{texto.especialistas}</p>
               <h2 className="fw-bold fs-1 text-center">
-                {" "}
-                <span className="lot">UHMO</span>DESARROLLO WEB
+                <span className="lot">UHMO</span> {texto.subtitulo}
               </h2>
-              <p className="lead text-center">
-                En <span className="fw-bold lot"> UHMO</span>, brindamos
-                servicios de{" "}
-                <span className="fw-bold">desarrollo web de calidad</span>.
-                Desarrollamos páginas web de alto impacto apuntadas a maximizar
-                resultados. Somos especialistas en generar soluciones a medida y
-                diseño personalizado para cada cliente.
-              </p>
+              <p className="lead text-center">{texto.descripcion}</p>
               <div className="text-center">
                 <Link to="contacto" className="custom-btn btn-15">
-                  {" "}
-                  Consúltanos
+                  {texto.btnConsulta}
                 </Link>
               </div>
             </div>
           </div>
         </section>
-        <section className="py-5 text-white container2 ">
+
+        <section className="py-5 text-white container2">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-12 col-md-6 col-lg-6 py-3">
@@ -146,7 +181,7 @@ function Home() {
                   data-aos="fade-up"
                   data-aos-duration="1500"
                 >
-                  Nuestra Misión: Innovación, Cliente y Accesibilidad.
+                  {texto.mision}
                 </h2>
               </div>
               <div
@@ -154,21 +189,14 @@ function Home() {
                 data-aos="fade-up"
                 data-aos-duration="1500"
               >
-                <p className="lead text-center">
-                  "Realmente creemos que con una estrategia web correcta,
-                  comunicación acertada y diseño creativo, tu empresa puede
-                  sacar un provecho de internet MUY superior al que imaginás
-                  posible."
-                </p>
-
-                <h4 className="fw-bold text-center">
-                  Y queremos ayudarte a lograrlo&nbsp;!
-                </h4>
+                <p className="lead text-center">{texto.vision}</p>
+                <h4 className="fw-bold text-center">{texto.ayuda}</h4>
               </div>
             </div>
           </div>
         </section>
-        <PreguntasFrecuentes></PreguntasFrecuentes>
+
+        <PreguntasFrecuentes />
         <section className="py-5 text-white container2">
           <div
             className="container row"
@@ -192,11 +220,10 @@ function Home() {
                   />
                 </svg>
               </div>
-              <h2 className="text-center fw-bold ">
-                Desarrollemos tu web juntos
-              </h2>
+              <h2 className="text-center fw-bold ">{texto.formRapido}</h2>
               <span className="turquesaOscuro title">
                 <Typewriter
+                  key={key}
                   options={{
                     autoStart: true,
                     loop: true,
@@ -206,10 +233,10 @@ function Home() {
                   }}
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString(palabrasClaves.form1)
+                      .typeString(texto.formRapidoChange)
                       .pauseFor(1500)
                       .deleteAll()
-                      .typeString(palabrasClaves.form2)
+                      .typeString(texto.formRapidoChange2)
                       .pauseFor(1800)
                       .deleteAll()
                       .start();

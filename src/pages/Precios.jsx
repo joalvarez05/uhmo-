@@ -1,8 +1,116 @@
 import { React, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "@/hooks/LanguageContext";
+import { useContext } from "react";
+
+export const translations = {
+  es: {
+    bread: "Inicio",
+    precios: "Precios",
+    alternativas: "Algunas de nuestras alternativas",
+    descripcion:
+      "Todos nuestros precios son de un único pago, lo que significa que no hay mensualidades ni comisiones ocultas. Además de todo esto, te regalamos un año de hosting y dominio sin costo.",
+    landingPage: "Ideal para mostrar tu producto y generar leads.",
+    autoGestion: "Manejalo vos mismo!",
+    ecommerce: "Ofrece tus productos!",
+    empresas: "Sitio Web para Empresas",
+    contacto: "Contáctanos",
+    personalizado: "¿Necesitas una solución personalizada para tu empresa?",
+    contact: "y lo hacemos posible",
+    landingPageFeatures: [
+      "Diseño Web Responsive",
+      "Dominio y Hosting Gratis 1 año",
+      "Mail Corporativo",
+      "Formulario de Contacto",
+      "Puede contener Redes Sociales",
+    ],
+    autoGestionFeatures: [
+      "Todas las opciones de Landing Page",
+      "Panel Administrador",
+      "Base de Datos",
+      "BackUp diario de Base de Datos",
+      "Diseño Personalizado",
+    ],
+    ecommerceFeatures: [
+      "Todas las opciones de Auto Gestión",
+      "Altas y Bajas de productos/servicios",
+      "Vendé sin comisiones",
+      "Soporte a disposición",
+    ],
+    premiumFeatures: [
+      "Diseño 100% personalizado",
+      "Contenido que quieras mostrar",
+      "Formulario de contacto",
+      "Botón de WhatsApp",
+      "Enlace a Redes Sociales",
+      "Mails corporativos",
+    ],
+    empresa: "Empresas",
+    gestion: "Autogestión",
+    price: {
+      pLandingPage: "250.000",
+      pAutoGestion: "400.000",
+      pEcommerce: "350.000",
+      pEmpresa: "350.000",
+    },
+    pagoUnico: "Pago por única vez",
+  },
+  en: {
+    bread: "Home",
+    precios: "Prices",
+    alternativas: "Some of our alternatives",
+    descripcion:
+      "All our prices are a one-time payment, meaning no monthly fees or hidden commissions. On top of that, we give you one year of free hosting and domain.",
+    landingPage: "Ideal for showcasing your product and generating leads.",
+    autoGestion: "Manage it yourself!",
+    ecommerce: "Sell your products!",
+    empresas: "Website for Companies",
+    contacto: "Contact us",
+    personalizado: "Need a personalized solution for your business?",
+    contact: "and we'll make it happen",
+    landingPageFeatures: [
+      "Responsive Web Design",
+      "Free Hosting and Domain for 1 year",
+      "Corporate Email",
+      "Contact Form",
+      "May include Social Media",
+    ],
+    autoGestionFeatures: [
+      "All Landing Page features",
+      "Admin Panel",
+      "Database",
+      "Daily Database BackUp",
+      "Custom Design",
+    ],
+    ecommerceFeatures: [
+      "All Auto Management features",
+      "Add and Remove products/services",
+      "Sell with no commissions",
+      "Support available",
+    ],
+    premiumFeatures: [
+      "100% Custom Design",
+      "Content of your choice",
+      "Contact Form",
+      "WhatsApp Button",
+      "Social Media Links",
+      "Corporate Emails",
+    ],
+    empresa: "Companies",
+    gestion: "Self-Management",
+    price: {
+      pLandingPage: "200",
+      pAutoGestion: "400",
+      pEcommerce: "350",
+      pEmpresa: "350",
+    },
+    pagoUnico: "One-time payment",
+  },
+};
 
 function Precios() {
   const [isMobile, setIsMobile] = useState(false);
+  const { language } = useContext(LanguageContext);
   useEffect(() => {
     const checkIsMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     setIsMobile(checkIsMobile);
@@ -39,8 +147,32 @@ function Precios() {
     </svg>
   );
 
+  const {
+    precios,
+    alternativas,
+    descripcion,
+    landingPage,
+    autoGestion,
+    ecommerce,
+    empresa,
+    contacto,
+    empresas,
+    gestion,
+    personalizado,
+    landingPageFeatures,
+    autoGestionFeatures,
+    ecommerceFeatures,
+    premiumFeatures,
+    price,
+    pagoUnico,
+    bread,
+    contact,
+  } = translations[language];
+
   return (
     <>
+      {/* https://acequiones.vercel.app/ */}
+      <div className="d-none">https://acequiones.vercel.app/</div>
       <div className="img-background2 justify-content-end">
         <div className="container">
           <div className="row align-items-center">
@@ -50,7 +182,7 @@ function Precios() {
                 data-aos="fade-left"
                 data-aos-duration="1600"
               >
-                Precios
+                {precios}
               </h2>
             </div>
           </div>
@@ -65,11 +197,11 @@ function Precios() {
                 className="nav_link turquesaOscuro link-offset-2 link-underline link-underline-opacity-0"
               >
                 {" "}
-                Inicio{" "}
+                {bread}{" "}
               </Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <span className="bg-breadcrumb">Precios</span>
+              <span className="bg-breadcrumb">{precios}</span>
             </li>
           </ol>
         </nav>
@@ -78,20 +210,16 @@ function Precios() {
       <section className="py-5" data-aos="fade-up" data-aos-duration="1600">
         <div className="container py-2">
           <h2 className="text-center fw-bold pb-2">
-            Algunas de nuestras alternativas
+            {alternativas}
             <span className="fw-light"> ** </span>
           </h2>
-          <h5 className="lead text-center pt-2">
-            Todos nuestros precios son de un único pago, lo que significa que no
-            hay mensualidades ni comisiones ocultas. Además de todo esto, te
-            regalamos un año de hosting y dominio sin costo.
-          </h5>
+          <h5 className="lead text-center pt-2">{descripcion}</h5>
           <div className="row py-4">
-            {["Landing Page", "Auto Gestión", "E-commerce"].map(
+            {["Landing Page", gestion, "E-commerce", empresa].map(
               (plan, index) => (
                 <div
                   key={index}
-                  className="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-center card-hover"
+                  className="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center card-hover"
                 >
                   <a
                     className="text-decoration-none"
@@ -105,101 +233,49 @@ function Precios() {
                       <div className="pack_name">{plan}</div>
                       <p className="description">
                         {plan === "Landing Page"
-                          ? "Ideal para mostrar tu producto y generar leads."
-                          : plan === "Auto Gestión"
-                          ? "Manejalo vos mismo!"
-                          : "Ofrece tus productos!"}
+                          ? landingPage
+                          : plan === gestion
+                          ? autoGestion
+                          : plan === "E-commerce"
+                          ? ecommerce
+                          : plan === empresa
+                          ? empresas
+                          : ""}
                       </p>
                       <div className="lists">
-                        {plan === "Landing Page" ? (
-                          <>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Diseño Web Responsive</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>
-                                Dominio y Hosting Gratis{" "}
-                                <span className="fw-bold">1 año</span>
-                              </span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Mail Corporativo</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Formulario de Contacto</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Puede contener Redes Sociales</span>
-                            </div>
-                          </>
-                        ) : plan === "Auto Gestión" ? (
-                          <>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>
-                                Todas las opciones de{" "}
-                                <span className="rosa">Landing Page</span>
-                              </span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Panel Administrador</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Base de Datos</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>BackUp diario de Base de Datos</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Diseño Personalizado</span>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>
-                                Todas las opciones de{" "}
-                                <span className="rosa">Auto Gestión</span>
-                              </span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Altas y Bajas de productos/servicios</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Vendé sin comisiones</span>
-                            </div>
-                            <div className="list">
-                              {tildeSvg}
-                              <span>Soporte a disposición</span>
-                            </div>
-                          </>
-                        )}
+                        {(plan === "Landing Page"
+                          ? landingPageFeatures
+                          : plan === gestion
+                          ? autoGestionFeatures
+                          : plan === "E-commerce"
+                          ? ecommerceFeatures
+                          : plan === empresa
+                          ? premiumFeatures
+                          : []
+                        ).map((feature, idx) => (
+                          <div key={idx} className="list">
+                            {tildeSvg}
+                            <span>{feature}</span>
+                          </div>
+                        ))}
                       </div>
                       <div className="bottom">
                         <div className="text-center mt-3">
                           <span className="devise">$</span>
                           <span className="price d-inline px-2">
                             {plan === "Landing Page"
-                              ? "250.000"
-                              : plan === "Auto Gestión"
-                              ? "400.000"
-                              : "350.000"}
+                              ? price.pLandingPage
+                              : plan === gestion
+                              ? price.pAutoGestion
+                              : plan === "E-commerce"
+                              ? price.pEcommerce
+                              : plan === empresa
+                              ? price.pEmpresa
+                              : ""}
                           </span>
-                          <p className="verde d-block">Pago por única vez</p>
+                          <p className="verde d-block">{pagoUnico}</p>
                         </div>
-                        <button className="btn33 ">Contactanos</button>
+                        <button className="btn33 ">{contacto}</button>
                       </div>
                     </div>
                   </a>
@@ -207,14 +283,13 @@ function Precios() {
               )
             )}
           </div>
-          <div className=" mt-5">
+          <div className="mt-5">
             <p className="fw-bold f-6 text-center">
-              ** ¿Necesitas una solución personalizada para tu empresa?{" "}
+              ** {personalizado}{" "}
               <Link to="/contacto" className="rosa text-decoration-none">
-                {" "}
-                Contáctanos{" "}
-              </Link>
-              y lo hacemos posible. **
+                {contacto}
+              </Link>{" "}
+              {contact} **
             </p>
           </div>
         </div>

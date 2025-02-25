@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Card from "@/components/cards/Card.jsx";
+import { LanguageContext } from "@/hooks/LanguageContext";
+const translations = {
+  es: {
+    title: "UHMO - Portfolio de Trabajos ✨.",
+    description:
+      "Conocé algunos trabajos de desarrollo web realizados por nuestra empresa.",
+    keywords: "trabajos, portfolio, portafolio, Mi Empresa",
+    portfolio: "Portfolio",
+    home: "Inicio",
+  },
+  en: {
+    title: "UHMO - Work Portfolio ✨.",
+    description:
+      "Discover some web development projects carried out by our company.",
+    keywords: "work, portfolio, showcase, My Company",
+    portfolio: "Portfolio",
+    home: "Home",
+  },
+};
+
 function Portfolio() {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language] || translations.es;
+
   return (
     <>
       <Helmet>
-        <title>UHMO - Portfolio de Trabajos ✨.</title>
+        <title>{t.title}</title>
         <link rel="canonical" href="https://uhmo.com.ar/portfolio" />
-        <meta
-          name="description"
-          content="Conocé algunos trabajos de desarrollo web realizados por nuestra empresa."
-        />
-        <meta
-          name="keywords"
-          content="trabajos, portfolio,portafolio, Mi Empresa"
-        />
+        <meta name="description" content={t.description} />
+        <meta name="keywords" content={t.keywords} />
       </Helmet>
       <div className="img-background2 justify-content-end">
         <div className="container">
@@ -26,7 +43,7 @@ function Portfolio() {
                 data-aos="fade-left"
                 data-aos-duration="1600"
               >
-                Portfolio
+                {t.portfolio}
               </h2>
             </div>
           </div>
@@ -40,18 +57,17 @@ function Portfolio() {
                 to="/"
                 className="nav_link turquesaOscuro link-offset-2 link-underline link-underline-opacity-0"
               >
-                {" "}
-                Inicio{" "}
+                {t.home}
               </Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
-              <span className="bg-breadcrumb">Portfolio</span>
+              <span className="bg-breadcrumb">{t.portfolio}</span>
             </li>
           </ol>
         </nav>
         <hr />
       </div>
-      <Card></Card>
+      <Card />
     </>
   );
 }

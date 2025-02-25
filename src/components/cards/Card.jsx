@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./card.css";
 import { Link } from "react-router-dom";
 import bancaDiseñoResponsive from "@/assets/img/bancaDiseñoResponsive.webp";
@@ -8,7 +8,24 @@ import ecommerceWeb from "@/assets/img/ecommerceWeb.webp";
 import paginaDeTurismo from "@/assets/img/paginaDeTurismo.webp";
 import paginaWebParaArquitectos from "@/assets/img/paginaWebParaArquitectos.webp";
 import acequionesDesarrolloWeb from "@/assets/img/acequionesDesarrolloWeb.webp";
+import { LanguageContext } from "@/hooks/LanguageContext";
+const translations = {
+  es: {
+    h1: "Trabajos recientes ✨",
+    h2: "Conocé como trabajamos",
+    home: "Inicio",
+  },
+  en: {
+    h1: "Recent Work ✨",
+    h2: "Look how we work",
+    home: "Home",
+  },
+};
+
 const Card = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language] || translations.es;
+
   const images = [
     {
       src: acequionesDesarrolloWeb,
@@ -66,10 +83,8 @@ const Card = () => {
     <>
       <div className="py-3">
         <div className="d-flex justify-content-center flex-column align-items-center">
-          <h4 className="h2 fw-bold text-center">Trabajos recientes</h4>
-          <h5 className="fw-medium text-center ls-lg">
-            Conoce como trabajamos
-          </h5>
+          <h1 className="h2 fw-bold text-center">{t.h1}</h1>
+          <h2 className="fw-medium text-center ls-lg">{t.h2}</h2>
           <div className="underline-turquesa text-center"></div>
         </div>
         <div className="container py-5">

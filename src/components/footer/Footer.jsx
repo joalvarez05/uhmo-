@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "@/hooks/LanguageContext";
 import "./footer.css";
 import { Link } from "react-router-dom";
 import dataFiscal from "@/assets/img/datafiscal.webp";
+
 function Footer() {
-  const logoUrl =
-    "https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp";
+  const { language } = useContext(LanguageContext);
+
+  const traducciones = {
+    es: {
+      inicio: "Inicio",
+      acercaDeNosotros: "Acerca de Nosotros",
+      portfolio: "Portfolio",
+      contacto: "Contacto",
+      contáctenos: "Contáctenos",
+      region: "Argentina",
+      telefono: "+5493814186084",
+      correo: "Soporte.web@uhmo.com.ar",
+      derechosReservados: "Todos los derechos reservados.",
+    },
+    en: {
+      inicio: "Home",
+      acercaDeNosotros: "About Us",
+      portfolio: "Portfolio",
+      contacto: "Contact",
+      contáctenos: "Contact Us",
+      region: "Argentina",
+      telefono: "+5493814186084",
+      correo: "Soporte.web@uhmo.com.ar",
+      derechosReservados: "All rights reserved.",
+    },
+  };
+
   return (
     <>
       <footer
@@ -23,30 +50,30 @@ function Footer() {
               <nav aria-label="Footer Navigation">
                 <p className="footer-links">
                   <Link to="/" className="link-1" itemProp="url">
-                    Inicio
+                    {traducciones[language].inicio}
                   </Link>
                   <Link to="/nosotros" itemProp="url">
-                    Acerca de Nosotros
+                    {traducciones[language].acercaDeNosotros}
                   </Link>
                   <Link to="/portfolio" itemProp="url">
-                    Portfolio
+                    {traducciones[language].portfolio}
                   </Link>
                   <Link to="/contacto" itemProp="url">
-                    Contacto
+                    {traducciones[language].contacto}
                   </Link>
                 </p>
               </nav>
             </div>
 
-            <div className=" col-12 col-md-6 col-lg-4 text-centerpy-2 d-flex flex-column justify-content-center align-items-center text-nowrap">
+            <div className="col-12 col-md-6 col-lg-4 text-center py-2 d-flex flex-column justify-content-center align-items-center text-nowrap">
               <p itemProp="addressRegion" className="fs-4 fw-bold">
-                Contáctenos
+                {traducciones[language].contáctenos}
               </p>
               <div className="underline-turquesa mb-4"></div>
               <div className="d-flex">
                 <p itemProp="postalCode" className="fs-5">
                   <i className="bi bi-geo-alt turquesaClaro fs-3 me-1"></i>
-                  Argentina
+                  {traducciones[language].region}
                 </p>
               </div>
 
@@ -58,7 +85,7 @@ function Footer() {
                     target="_blank"
                   >
                     <i className="bi bi-telephone turquesaClaro me-1 fs-3"></i>
-                    +5493814186084
+                    {traducciones[language].telefono}
                   </a>
                 </p>
               </div>
@@ -70,7 +97,7 @@ function Footer() {
                     target="_blank"
                   >
                     <i className="bi bi-envelope-at me-1 fs-3 turquesaClaro sm_icon-none"></i>
-                    Soporte.web@uhmo.com.ar
+                    {traducciones[language].correo}
                   </a>
                 </p>
               </div>
@@ -89,11 +116,12 @@ function Footer() {
         </div>
       </footer>
       <div className="col-12 col-md-12 col-lg-12 text-center bg-dark pt-4 pb-1 blanco">
-        &copy; 2025 UHMODesarrollos · Todos los derechos reservados.
+        &copy; 2025 UHMODesarrollos ·{" "}
+        {traducciones[language].derechosReservados}
         <div>
           <Link to="/">
             <img
-              src={logoUrl}
+              src="https://res.cloudinary.com/druvz15q9/image/upload/v1737947671/uhmoLogoLight_ufr6vq.webp"
               alt="logo de uhmo desarrollos"
               itemProp="logo"
               loading="lazy"
