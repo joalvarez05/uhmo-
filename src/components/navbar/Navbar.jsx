@@ -86,7 +86,8 @@ function Navbar() {
                 </Link>
               </div>
             </div>
-            <button className="btn btn-light ms-3" onClick={toggleLanguage}>
+
+            <button className="btna me-3" onClick={toggleLanguage}>
               {language === "es" ? "EN" : "ES"}
             </button>
           </div>

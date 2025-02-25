@@ -1,11 +1,76 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import "./formulario.css";
+import { LanguageContext } from "@/hooks/LanguageContext";
+const translations = {
+  es: {
+    name: "Nombre completo (*)",
+    nameRequired: "El nombre es obligatorio",
+    nameMin: "Tu nombre debe contener mínimo 3 caracteres",
+    nameMax: "Tu nombre es demasiado largo",
+    namePattern: "Solo se permiten letras y espacios",
+
+    email: "Email (*)",
+    emailRequired: "El correo electrónico es obligatorio",
+    emailInvalid: "Ingresa un correo válido",
+
+    phone: "Teléfono (*)",
+    phoneRequired: "El Teléfono es obligatorio",
+    phonePattern: "Solo se permiten números",
+    phoneMin: "Número demasiado corto",
+    phoneMax: "Número demasiado largo",
+
+    message: "Ingresa tu mensaje aquí (*)",
+    messageRequired: "El mensaje es obligatorio",
+    messageMin: "El mensaje debe contener al menos 10 caracteres",
+    messageMax: "El mensaje es demasiado largo",
+
+    submit: "Enviar",
+    sending: "Enviando",
+    successTitle: "Formulario enviado con éxito!",
+    successText: "Te responderemos a la brevedad.",
+    errorTitle: "Hubo un error!",
+    errorText: "Inténtalo nuevamente.",
+  },
+  en: {
+    name: "Full Name (*)",
+    nameRequired: "Name is required",
+    nameMin: "Your name must contain at least 3 characters",
+    nameMax: "Your name is too long",
+    namePattern: "Only letters and spaces are allowed",
+
+    email: "Email (*)",
+    emailRequired: "Email is required",
+    emailInvalid: "Enter a valid email",
+
+    phone: "Phone (*)",
+    phoneRequired: "Phone number is required",
+    phonePattern: "Only numbers are allowed",
+    phoneMin: "Number is too short",
+    phoneMax: "Number is too long",
+
+    message: "Enter your message here (*)",
+    messageRequired: "Message is required",
+    messageMin: "Message must be at least 10 characters long",
+    messageMax: "Message is too long",
+
+    submit: "Send",
+    sending: "Sending",
+    successTitle: "Form sent successfully!",
+    successText: "We will get back to you shortly.",
+    errorTitle: "There was an error!",
+    errorText: "Please try again.",
+  },
+};
+
 function FormRapido() {
   const [isLoading, setIsLoading] = useState(false);
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
+
   const {
     register,
     handleSubmit,
@@ -25,14 +90,14 @@ function FormRapido() {
       await emailjs.send(serviceId, templateId, data, publicKey);
       reset();
       Swal.fire({
-        title: "Formulario enviado con éxito!",
-        text: "Te responderemos a la brevedad.",
+        title: t.successTitle,
+        text: t.successText,
         icon: "success",
       }).then(() => navigate("/"));
     } catch {
       Swal.fire({
-        title: "Hubo un error!",
-        text: "Inténtalo nuevamente.",
+        title: t.errorTitle,
+        text: t.errorText,
         icon: "error",
       });
     } finally {
@@ -51,22 +116,16 @@ function FormRapido() {
             autoComplete="name"
             className="input"
             {...register("name", {
-              required: "El nombre es obligatorio",
-              minLength: {
-                value: 3,
-                message: "Tu nombre debe contener mínimo 3 caracteres",
-              },
-              maxLength: {
-                value: 40,
-                message: "Tu nombre es demasiado largo",
-              },
+              required: t.nameRequired,
+              minLength: { value: 3, message: t.nameMin },
+              maxLength: { value: 40, message: t.nameMax },
               pattern: {
                 value: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/u,
-                message: "Solo se permiten letras y espacios",
+                message: t.namePattern,
               },
             })}
           />
-          <span>Nombre completo (*)</span>
+          <span>{t.name}</span>
         </label>
         {errors.name && <p className="fst-italic">{errors.name.message}</p>}
 
@@ -78,47 +137,36 @@ function FormRapido() {
             autoComplete="email"
             id="email"
             {...register("email", {
-              required: true,
+              required: t.emailRequired,
               minLength: 3,
               maxLength: 254,
-              pattern: {
-                value: regexEmail,
-                message: "Ingresa un correo valido",
-              },
+              pattern: { value: regexEmail, message: t.emailInvalid },
             })}
           />
-          <span>Email (*)</span>
+          <span>{t.email}</span>
         </label>
-        {errors.email && <p className="fst-italic ">{errors.email.message}</p>}
+        {errors.email && <p className="fst-italic">{errors.email.message}</p>}
 
         <label htmlFor="telefono">
           <input
             type="tel"
             className="input"
             id="telefono"
-            autoComplete="telefono"
-            name="telefono"
-            {...register("telefono", {
-              required: "El Teléfono es obligatorio",
+            autoComplete="tel"
+            name="phone"
+            {...register("phone", {
+              required: t.phoneRequired,
               pattern: {
                 value: /^(?=.*[1-9])\d{6,16}$/,
-                message: "Solo se permiten números",
+                message: t.phonePattern,
               },
-              minLength: {
-                value: 6,
-                message: "Número demasiado corto",
-              },
-              maxLength: {
-                value: 16,
-                message: "Número demasiado largo",
-              },
+              minLength: { value: 6, message: t.phoneMin },
+              maxLength: { value: 16, message: t.phoneMax },
             })}
           />
-          <span>Teléfono (*)</span>
+          <span>{t.phone}</span>
         </label>
-        {errors.telefono && (
-          <p className="fst-italic"> {errors.telefono.message}</p>
-        )}
+        {errors.phone && <p className="fst-italic">{errors.phone.message}</p>}
 
         <label htmlFor="mensaje">
           <textarea
@@ -126,31 +174,29 @@ function FormRapido() {
             name="message"
             id="mensaje"
             autoComplete="message"
-            placeholder="Ingresa tu mensaje aquí (*)"
+            placeholder={t.message}
             className="input01"
             {...register("message", {
-              required: true,
+              required: t.messageRequired,
               maxLength: 1000,
-              minLength: {
-                value: 10,
-                message: "El mensaje debe contener al menos 10 caracteres",
-              },
+              minLength: { value: 10, message: t.messageMin },
             })}
           ></textarea>
           {errors.message && (
-            <p className="fst-italic"> {errors.message.message}</p>
+            <p className="fst-italic">{errors.message.message}</p>
           )}
         </label>
+
         <button className="fancy" type="submit" disabled={isLoading}>
           <span className="top-key"></span>
-          <span className="text">Enviar</span>
+          <span className="text">{isLoading ? t.sending : t.submit}</span>
           <span className="bottom-key-1"></span>
           <span className="bottom-key-2"></span>
         </button>
       </form>
       {isLoading && (
         <>
-          <span className="py-2 fs-3 fw-bold turquesaOscuro">Enviando</span>{" "}
+          <span className="py-2 fs-3 fw-bold turquesaOscuro">{t.sending}</span>
           <span className="loader py-1"></span>
         </>
       )}
